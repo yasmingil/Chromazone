@@ -9,8 +9,13 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="EnemyParent.cs" t="Include" />
+          <e p="EnemySpawner.cs" t="Include" />
+          <e p="Gunner.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="ShootBullets.cs" t="Include" />
+          <e p="towerBulletScript.cs" t="Include" />
+          <e p="TowerPlacement.cs" t="Include" />
+          <e p="TowerScript.cs" t="Include" />
         </e>
         <e p="URP" t="Include">
           <e p="Scripts" t="Include">
