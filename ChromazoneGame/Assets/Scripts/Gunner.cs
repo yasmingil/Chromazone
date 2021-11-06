@@ -35,6 +35,7 @@ public class Gunner : MonoBehaviour
             direction.Normalize();
             var velocity = direction * bulletSpeed;
             spawnBullet.GetComponent<Rigidbody2D>().velocity = velocity;
+
         }
         
 
