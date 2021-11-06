@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletCooldown;
     [SerializeField] private float bulletSpeed;
+    [SerializeField] private int bulletDamage;
     private float counter = 0f;
     
     [SerializeField] private GameObject tower1;
@@ -114,6 +115,7 @@ public class PlayerController : MonoBehaviour
         {
             counter = 0;
             GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            spawnBullet.GetComponent<Bullet>().SetBulletDamage(bulletDamage);
             var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
             var direction = worldMousePosition - transform.position;
             direction.z = 0;
@@ -124,30 +126,39 @@ public class PlayerController : MonoBehaviour
     }
     private void PlaceTower(GameObject tower)
     {
-        Vector3 mousePosition = Vector3.zero;
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        {
-            mousePosition = new Vector3(hit.point.x, hit.point.y, 0);
-        }
-        var placeDir = (mousePosition - transform.position).normalized;
-        float distance = Vector3.Distance(transform.position, mousePosition);
+        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+        worldMousePosition.z = 0;
+        var placeDir = (worldMousePosition - transform.position).normalized;
+        Debug.Log(worldMousePosition.z);
+        //Debug.Log("Transform z: " + transform.position.z);
+        float distance = Vector3.Distance(transform.position, worldMousePosition);
         distance = Mathf.Min(distance, placementRadius);
         var placePosition = transform.position + placeDir * distance;
-        Debug.Log(placePosition);
         placementUI.transform.position = placePosition;
-        
-        //GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
-        /*float closestDist = float.MaxValue;
-        foreach (var t in towers)
+        if (Input.GetMouseButtonDown(0))
         {
-            float distToTower = Vector3.Distance(t.transform.position, transform.position)
-            if (distToTower <= closestDist)
+            GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+            if (towers.Length != 0)
             {
-                closestDist = distToTower;
+                float closestDist = float.MaxValue;
+                foreach (var t in towers)
+                {
+                    float distToTower = Vector3.Distance(t.transform.position, transform.position);
+                    if (distToTower <= closestDist)
+                    {
+                        closestDist = distToTower;
+                    }
+                }
+
+                if (closestDist <= towers[0].GetComponent<TowerScript>().GetRadius())
+                {
+                    Instantiate(tower, placePosition, Quaternion.identity);
+                    currentState = playerState.SHOOTING;
+                }
             }
-        }*/
+            
+        }
+        
 
     }
 }
