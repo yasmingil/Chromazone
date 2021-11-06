@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Boundary")
         {
@@ -30,6 +30,7 @@ public class Bullet : MonoBehaviour
         {
             if (collision.transform.tag == "Player")
             {
+                Debug.Log("Hits player");
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<PlayerStats>().ChangeHealth(-BulletDamage);
             }
@@ -38,6 +39,7 @@ public class Bullet : MonoBehaviour
         {
             if(collision.transform.tag == "Enemy")
             {
+                Debug.Log("Hits enemy");
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<EnemyParent>().ChangeHealth(-BulletDamage);
             }
