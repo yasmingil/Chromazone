@@ -2,26 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Rigidbody2D))]
 public class towerBulletScript : MonoBehaviour
 {
-    public int damage;
-    public float bulletSpeed;
-    public GameObject target=null;
+    private int damage;
+    private float bulletSpeed;
+    private GameObject target = null;
+    private float rotateSpeed = 10000f;
+
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
-    {  
-        Vector3 targetPos = target.transform.position;
-        Vector3 direction = targetPos - transform.position;
-        direction.z = 0;
+    void FixedUpdate()
+    {
+        Vector2 direction = (Vector2)target.transform.position - rb.position;
+
         direction.Normalize();
-        Vector3 bulletVelocity = direction * bulletSpeed;
+
+        float rotateAmmount = Vector3.Cross(direction, transform.up).z;
+
+        rb.angularVelocity = -rotateAmmount * rotateSpeed;
+
+        rb.velocity = transform.up * bulletSpeed;
+
     }
+
+
     public void SetDamage(int d)
     {
         damage = d;

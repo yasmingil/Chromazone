@@ -7,11 +7,12 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private int Health;
     [SerializeField] private float range;
     [SerializeField] private Color towerColor;
-    [SerializeField] private float attackSpeed;
+    [SerializeField] private float bulletCooldown;
     [SerializeField] private int damage;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private enum shotType { SPREAD, SINGLE };
     [SerializeField] private GameObject bullet;
+    private float counter = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +36,24 @@ public class TowerScript : MonoBehaviour
             }
         }
 
-        GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+        
 
         //set the bullet speed and damage
+        if (counter <= bulletCooldown)
+        {
+            counter += Time.deltaTime;
+        }
+        else
+        {
+            counter = 0;
+            GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
+            spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
+            spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
+        }
 
-        spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
-        spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
-        spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
+
+
     }
 
     public float GetRadius()
