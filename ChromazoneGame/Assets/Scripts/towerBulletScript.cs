@@ -31,14 +31,20 @@ public class towerBulletScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 direction = (Vector2)target.transform.position - rb.position;
+        if (target != null)
+        {
+            Vector2 direction = (Vector2)target.transform.position - rb.position;
 
-        direction.Normalize();
+            direction.Normalize();
 
-        float rotateAmmount = Vector3.Cross(direction, transform.up).z;
+            float rotateAmmount = Vector3.Cross(direction, transform.up).z;
 
+            rb.velocity = direction * bulletSpeed;
+        }
+        else
+        {
 
-        rb.velocity = direction * bulletSpeed;  
+        }
 
     }
     void OnCollisionEnter2D(Collision2D collision)
