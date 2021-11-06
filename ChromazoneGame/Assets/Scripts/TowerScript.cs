@@ -13,7 +13,6 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private enum shotType { SPREAD, SINGLE };
     [SerializeField] private GameObject bullet;
     private float counter = 0f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +35,7 @@ public class TowerScript : MonoBehaviour
             }
         }
 
-        
+
 
         //set the bullet speed and damage
         if (counter <= bulletCooldown)
@@ -51,6 +50,7 @@ public class TowerScript : MonoBehaviour
             spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
             spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
         }
+
 
 
 
