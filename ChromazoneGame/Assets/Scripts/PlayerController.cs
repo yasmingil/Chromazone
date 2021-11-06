@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     private Vector2 playerInput = new Vector2();
     private Rigidbody2D rb;
+    private Vector3 worldMousePosition;
     
     private enum playerState
     {
@@ -42,6 +43,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+        worldMousePosition.z = 0;
+        transform.up = transform.position - worldMousePosition;
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             radiusUI.enabled = true;
@@ -114,10 +118,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             counter = 0;
-            GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            GameObject spawnBullet = Instantiate(bullet, transform.position, transform.rotation);
             spawnBullet.GetComponent<Bullet>().SetBulletDamage(bulletDamage);
-            var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-            var direction = worldMousePosition - transform.position;
+           var direction = worldMousePosition - transform.position;
             direction.z = 0;
             direction.Normalize();
             var velocity = direction * bulletSpeed;
@@ -126,8 +129,6 @@ public class PlayerController : MonoBehaviour
     }
     private void PlaceTower(GameObject tower)
     {
-        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-        worldMousePosition.z = 0;
         var placeDir = (worldMousePosition - transform.position).normalized;
         Debug.Log(worldMousePosition.z);
         //Debug.Log("Transform z: " + transform.position.z);

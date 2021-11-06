@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b19e2e03-a9a3-4ae4-809e-48e76f1a7d96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerBullet.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636178351453</updated>
       <workItem from="1636178368383" duration="6352000" />
-      <workItem from="1636228695264" duration="7472000" />
+      <workItem from="1636228695264" duration="9720000" />
     </task>
     <servers />
   </component>
