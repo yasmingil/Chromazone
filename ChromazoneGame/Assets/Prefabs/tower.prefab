@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1178329571304912532}
   m_Layer: 0
   m_Name: tower
-  m_TagString: tower
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 50
-  range: 1
+  range: 1000
   towerColor: {r: 0, g: 0, b: 0, a: 0}
   bulletCooldown: 1
   damage: 50

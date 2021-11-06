@@ -23,22 +23,27 @@ public class TowerScript : MonoBehaviour
     void Update()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closestEnemy=null;
+        GameObject closestEnemy = null;
         float closestDist = 199999999;
-        foreach(var g in enemies)
+        if (enemies.Length > 0)
         {
-            float distance = Vector3.Distance(transform.position, g.transform.position);
-
-            if (distance < range && distance < closestDist )
+            foreach (var g in enemies)
             {
-                closestEnemy = g;
+                float distance = Vector3.Distance(transform.position, g.transform.position);
+
+                if (distance < range && distance < closestDist)
+                {
+                    closestEnemy = g;
+                    closestDist = distance;
+                }
             }
         }
 
 
 
+
         //set the bullet speed and damage
-        if (counter <= bulletCooldown)
+        if (counter <= bulletCooldown || closestEnemy==null)
         {
             counter += Time.deltaTime;
         }

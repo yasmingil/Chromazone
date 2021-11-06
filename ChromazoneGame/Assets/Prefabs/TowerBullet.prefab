@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3304746794524639172}
   - component: {fileID: -7777601127946754550}
   - component: {fileID: 5912334371386067736}
+  - component: {fileID: -8559647856829887010}
   m_Layer: 0
-  m_Name: tower bullet
+  m_Name: TowerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b47077a4c5fa549bbbd8c108c65172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
 --- !u!50 &5912334371386067736
 Rigidbody2D:
   serializedVersion: 4
@@ -118,3 +118,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &-8559647856829887010
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473749547532530190}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997

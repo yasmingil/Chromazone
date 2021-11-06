@@ -43,7 +43,7 @@ public class towerBulletScript : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        Debug.Log(collision.collider.name);
     }
 
 
