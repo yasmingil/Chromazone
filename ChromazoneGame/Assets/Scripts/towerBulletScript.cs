@@ -47,14 +47,14 @@ public class towerBulletScript : MonoBehaviour
         }
 
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.collider.tag);
-        if(collision.collider.tag == "Enemy")
+        Debug.Log(collision.tag);
+        if(collision.tag == "Enemy")
         {
             Destroy(gameObject);
         }
-        else if (collision.collider.tag == "Border")
+        else if (collision.tag == "Border")
         {
             Destroy(gameObject);
         }
