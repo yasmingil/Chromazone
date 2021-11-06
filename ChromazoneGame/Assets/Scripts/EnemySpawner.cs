@@ -7,13 +7,16 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform playArea;
     [SerializeField] private GameObject enemyPrefab;
 
+    [SerializeField] private GameObject testingTower;
+    [SerializeField] private float testingRadius;
+
     private float timer;
 
     private void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer >= .25)
+        if (timer >= .05)
         {
             SpawnEnemy(enemyPrefab);
             timer = 0f;
@@ -26,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3();
 
         bool validPlace = false;
-        while (validPlace)
+        while (!validPlace)
         {
             //spawn on top or bottom
             if (Random.Range(0, 2) == 0)
@@ -58,7 +61,16 @@ public class EnemySpawner : MonoBehaviour
             }
             spawnPosition += playArea.transform.position;
 
+            validPlace = true;
+            foreach (GameObject tower in towers)
+            {
+                //if (tower.GetComponent<TowerScript>().GetRadius())
 
+                if (Vector3.Distance(spawnPosition, tower.transform.position) < testingRadius)
+                {
+                    validPlace = false;
+                }
+            }
         }
         
         Instantiate(enemy, spawnPosition, Quaternion.identity);
