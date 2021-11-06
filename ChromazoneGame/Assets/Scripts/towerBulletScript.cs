@@ -9,7 +9,7 @@ public class towerBulletScript : MonoBehaviour
     private int damage;
     private float bulletSpeed;
     private GameObject target = null;
-    private float rotateSpeed = 10000f;
+    private float rotateSpeed = 1000f;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
