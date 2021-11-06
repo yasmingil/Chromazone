@@ -12,6 +12,7 @@
           <e p="EnemySpawner.cs" t="Include" />
           <e p="Gunner.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="PlayerStats.cs" t="Include" />
           <e p="ShootBullets.cs" t="Include" />
           <e p="towerBulletScript.cs" t="Include" />
           <e p="TowerPlacement.cs" t="Include" />
