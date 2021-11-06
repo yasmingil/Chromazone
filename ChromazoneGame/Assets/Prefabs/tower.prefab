@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1178329571304912532}
   m_Layer: 0
   m_Name: tower
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 50
-  range: 50
+  range: 1
   towerColor: {r: 0, g: 0, b: 0, a: 0}
-  attackSpeed: 50
+  bulletCooldown: 1
   damage: 50
-  bulletSpeed: 50
+  bulletSpeed: 10
   bullet: {fileID: 7473749547532530190, guid: 6f62757c572f19f43aafdebf509f91e7, type: 3}
