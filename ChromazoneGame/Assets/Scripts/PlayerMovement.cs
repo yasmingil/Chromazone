@@ -6,15 +6,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float maxSpeed;
-    [SerializeField]private float acceleration;
+    [SerializeField] private float speed;
     private Vector2 playerInput = new Vector2();
-    private Rigidbody2D physics;
+    private Rigidbody2D rb;
     
     // Start is called before the first frame update
-    void Start()
+    void Start()    
     {
-        physics = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -27,6 +26,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        physics.velocity = playerInput;
-    }
+        rb.MovePosition(rb.position + playerInput * speed);
+    } 
 }

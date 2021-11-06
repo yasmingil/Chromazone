@@ -33,12 +33,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TowerPlacement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/ShootBullets.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShootBullets.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TowerPlacement.cs" />
       </list>
     </option>
   </component>
@@ -88,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636178351453</updated>
-      <workItem from="1636178368383" duration="1838000" />
+      <workItem from="1636178368383" duration="6352000" />
     </task>
     <servers />
   </component>
