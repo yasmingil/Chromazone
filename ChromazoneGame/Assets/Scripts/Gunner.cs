@@ -29,6 +29,8 @@ public class Gunner : MonoBehaviour
             counter = 0;
             GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             // Get player position
+            spawnBullet.GetComponent<Bullet>().SetBulletDamage(damage);
+            spawnBullet.GetComponent<Bullet>().SetIsEnemy(true);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             var direction = player.transform.position - transform.position;
             direction.z = 0;

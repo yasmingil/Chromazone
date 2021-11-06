@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] int BulletDamage;
+    [SerializeField] bool isEnemy = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +26,32 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Destroy bullet");
         }
-        if(collision.transform.tag == "Player")
+        if(isEnemy == true)
         {
-            Destroy(gameObject);
+            if (collision.transform.tag == "Player")
+            {
+                Destroy(gameObject);
+                collision.gameObject.GetComponent<PlayerStats>().ChangeHealth(-BulletDamage);
+            }
         }
+        else
+        {
+            if(collision.transform.tag == "Enemy")
+            {
+                Destroy(gameObject);
+                collision.gameObject.GetComponent<EnemyParent>().ChangeHealth(-BulletDamage);
+            }
+        }
+        
+    }
+
+    public void SetBulletDamage(int newDamage)
+    {
+        BulletDamage = newDamage;
+    }
+
+    public void SetIsEnemy(bool newIsEnemy)
+    {
+        isEnemy = newIsEnemy;
     }
 }
