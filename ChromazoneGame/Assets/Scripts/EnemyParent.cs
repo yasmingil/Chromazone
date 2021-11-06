@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class EnemyParent : MonoBehaviour
 {
-    [SerializeField] private float goldDrop;
-    [SerializeField] private float healthDrop;
+    //drop rates already in xx%
+    [SerializeField] private int goldDropRate;
+    [SerializeField] private int healthDropRate;
+    [SerializeField] private int goldDropValue;
+    [SerializeField] private int healthDropValue;
     [SerializeField] private int health = 100;
     [SerializeField] private float speed;
     [SerializeField] private int towerDamage;
     [SerializeField] private int playerDamage;
+    [SerializeField] private GameObject healthItem;
+    [SerializeField] private GameObject goldItem;
 
     [SerializeField] private GameObject target;
 
@@ -18,9 +23,6 @@ public class EnemyParent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-
-
         
     }
 
@@ -61,11 +63,28 @@ public class EnemyParent : MonoBehaviour
             Debug.Log("Player bomb damage");
             c.gameObject.GetComponent<PlayerStats>().ChangeHealth(playerDamage);
         }
+        if (c.gameObject.tag == "PlayerBullet")
+        {
+            //drops healthItem of healthDrop value
+            int chanceHealth = Random.Range(1,100);
+            int chanceGold = Random.Range(1,100);
+            if(chanceHealth >= healthDropRate)
+            {
+                GameObject spawnHealthItem = Instantiate(healthItem, transform.position, Quaternion.identity);
+            }
+            
+            else if(chanceGold >= healthDropRate)
+            {
+                GameObject spawnHealthItem = Instantiate(goldItem, transform.position, Quaternion.identity);
+            }
+        }
     }
 
     public void ChangeHealth(int healthChange)
     {
         health += healthChange;
+        //if(health == 0f)
+        
     }
 
 }

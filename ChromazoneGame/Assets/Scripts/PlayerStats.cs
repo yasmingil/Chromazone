@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("hit gold");
 
             goldAmt += goldValue;
-                                    Debug.Log(goldAmt);
+            Debug.Log(goldAmt);
 
         }
     }
@@ -43,7 +43,5 @@ public class PlayerStats : MonoBehaviour
     {
         goldAmt -= gold;
     }
-    
-
 
 }
