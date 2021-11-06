@@ -43,7 +43,11 @@ public class towerBulletScript : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.collider.name);
+        Debug.Log(collision.collider.tag);
+        if(collision.collider.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 
 
