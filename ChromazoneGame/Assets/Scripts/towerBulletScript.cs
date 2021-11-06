@@ -16,6 +16,16 @@ public class towerBulletScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        Vector2 direction = (Vector2)target.transform.position - rb.position;
+
+        direction.Normalize();
+
+        float rotateAmmount = Vector3.Cross(direction, transform.up).z;
+
+        rb.angularVelocity = -rotateAmmount * rotateSpeed;
+
+        rb.velocity = direction * bulletSpeed;
     }
 
     // Update is called once per frame
@@ -27,11 +37,16 @@ public class towerBulletScript : MonoBehaviour
 
         float rotateAmmount = Vector3.Cross(direction, transform.up).z;
 
-        rb.angularVelocity = -rotateAmmount * rotateSpeed;
 
-        rb.velocity = transform.up * bulletSpeed;
+        rb.velocity = direction * bulletSpeed;  
 
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
+
+
 
 
     public void SetDamage(int d)
