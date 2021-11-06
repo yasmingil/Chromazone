@@ -54,7 +54,7 @@ public class EnemyParent : MonoBehaviour
         if (c.gameObject.tag == "Tower")
         {
             Debug.Log("hit a tower");
-            speed = 0f;
+            Destroy(gameObject);
         }
 
         else if(c.gameObject.tag == "Player")
@@ -63,6 +63,7 @@ public class EnemyParent : MonoBehaviour
             Debug.Log("Player bomb damage");
             c.gameObject.GetComponent<PlayerStats>().ChangeHealth(playerDamage);
         }
+        //JUST TO TEST: if collide with player bullet, drop items
         if (c.gameObject.tag == "PlayerBullet")
         {
             //drops healthItem of healthDrop value
