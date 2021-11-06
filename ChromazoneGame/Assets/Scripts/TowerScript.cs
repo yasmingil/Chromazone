@@ -8,9 +8,10 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private Color towerColor;
     [SerializeField] private float attackSpeed;
-    [SerializeField] private int dammage;
+    [SerializeField] private int damage;
     [SerializeField] private float bulletSpeed;
-    [SerializeField] private enum shotType { SPREAD, SINGLE }; 
+    [SerializeField] private enum shotType { SPREAD, SINGLE };
+    [SerializeField] private GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -22,16 +23,28 @@ public class TowerScript : MonoBehaviour
     void Update()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closestEnemy;
-        float closestDist;
+        GameObject closestEnemy=null;
+        float closestDist = 199999999;
         foreach(var g in enemies)
         {
             float distance = Vector3.Distance(transform.position, g.transform.position);
-            if (distance <= range)
+
+            if (distance < range && distance < closestDist )
             {
-
+                closestEnemy = g;
             }
-
         }
+
+        GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+
+        //set the bullet speed and damage
+        spawnBullet.SetDamage(damage);
+        spawnBullet.SetbulletSpeed(bulletSpeed);
+        spawnBullet.SetTarget(closestEnemy);
+    }
+
+    public float GetRadius()
+    {
+        return range;
     }
 }
