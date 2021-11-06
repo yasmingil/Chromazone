@@ -54,7 +54,7 @@ public class EnemyParent : MonoBehaviour
         if (c.gameObject.tag == "Tower")
         {
             Debug.Log("hit a tower");
-            speed = 0f;
+            Destroy(gameObject);
         }
 
         else if(c.gameObject.tag == "Player")
