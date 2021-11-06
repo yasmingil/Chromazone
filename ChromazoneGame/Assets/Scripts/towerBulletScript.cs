@@ -48,6 +48,10 @@ public class towerBulletScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.collider.tag == "Border")
+        {
+            Destroy(gameObject);
+        }
     }
 
 

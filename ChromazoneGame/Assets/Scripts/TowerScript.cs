@@ -61,6 +61,15 @@ public class TowerScript : MonoBehaviour
 
     }
 
+    public void TakeDamage(int d)
+    {
+        Health -= d;
+    }
+    public void Heal(int h)
+    {
+        Health += h;
+    }
+
     public float GetRadius()
     {
         return range;
