@@ -26,7 +26,7 @@ public class towerBulletScript : MonoBehaviour
     {
         damage = d;
     }
-    public void SetbulletSpeed(float s)
+    public void SetBulletSpeed(float s)
     {
         bulletSpeed = s;
     }

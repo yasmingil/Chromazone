@@ -38,9 +38,10 @@ public class TowerScript : MonoBehaviour
         GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
 
         //set the bullet speed and damage
-        spawnBullet.SetDamage(damage);
-        spawnBullet.SetbulletSpeed(bulletSpeed);
-        spawnBullet.SetTarget(closestEnemy);
+
+        spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
+        spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
+        spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
     }
 
     public float GetRadius()
