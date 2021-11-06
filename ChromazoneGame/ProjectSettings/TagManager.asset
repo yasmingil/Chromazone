@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - gold
-  - tower
   - Enemy
+  - Tower
+  - Gold
   layers:
   - Default
   - TransparentFX
