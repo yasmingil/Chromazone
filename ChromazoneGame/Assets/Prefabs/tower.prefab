@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4e8ab90a37864caf11cc992f23535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 100
   range: 10
   towerColor: {r: 1, g: 1, b: 1, a: 0}
   bulletCooldown: 1
