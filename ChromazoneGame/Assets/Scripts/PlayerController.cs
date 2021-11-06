@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject tower1;
     [SerializeField] private GameObject tower2;
     [SerializeField] private GameObject tower3;
-    private GameObject currentSelected;
+    private GameObject currentSelectedTower;
     [SerializeField] private float placementRadius;
     [SerializeField] private Image radiusUI;
     [SerializeField] private Image placementUI;
@@ -28,7 +30,7 @@ public class PlayerController : MonoBehaviour
         PLACING,
         PAUSED
     };
-
+    [SerializeField]
     private playerState currentState = playerState.SHOOTING;
     void Start()    
     {
@@ -41,28 +43,35 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            currentSelected = tower1;
+            radiusUI.enabled = true;
+            placementUI.enabled = true;
+            currentSelectedTower = tower1;
             currentState = playerState.PLACING;
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            currentSelected = tower2;
+            radiusUI.enabled = true;
+            placementUI.enabled = true;
+            currentSelectedTower = tower2;
             currentState = playerState.PLACING;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            currentSelected = tower3;
+            radiusUI.enabled = true;
+            placementUI.enabled = true;
+            currentSelectedTower = tower3;
             currentState = playerState.PLACING;
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (currentState == playerState.PLACING)
-            {
-                currentState = playerState.SHOOTING;
-            }
+            placementUI.enabled = false;
+            radiusUI.enabled = false;
+            currentState = playerState.SHOOTING;
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
+            placementUI.enabled = false;
+            radiusUI.enabled = false;
             currentState = playerState.PAUSED;
         }
         if (currentState == playerState.PAUSED)
@@ -72,11 +81,28 @@ public class PlayerController : MonoBehaviour
         else if (currentState == playerState.SHOOTING)
         {
             Shoot();
+            Move();
         }
         else if (currentState == playerState.PLACING)
         {
-            
+            PlaceTower(currentSelectedTower);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (currentState == playerState.SHOOTING)
+        {
+            rb.MovePosition(rb.position + playerInput * speed);
+        }
+    }
+
+    private void Move()
+    {
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
+        playerInput.x = inputX;
+        playerInput.y = inputY;
     }
     private void Shoot()
     {
@@ -98,16 +124,30 @@ public class PlayerController : MonoBehaviour
     }
     private void PlaceTower(GameObject tower)
     {
-        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+        Vector3 mousePosition = Vector3.zero;
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            mousePosition = new Vector3(hit.point.x, hit.point.y, 0);
+        }
+        var placeDir = (mousePosition - transform.position).normalized;
+        float distance = Vector3.Distance(transform.position, mousePosition);
+        distance = Mathf.Min(distance, placementRadius);
+        var placePosition = transform.position + placeDir * distance;
+        Debug.Log(placePosition);
+        placementUI.transform.position = placePosition;
         
-        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
-        float closestDist = float.MaxValue;
+        //GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+        /*float closestDist = float.MaxValue;
         foreach (var t in towers)
         {
-            if (Vector3.Distance(t.transform.position, transform.position) <= closestDist)
+            float distToTower = Vector3.Distance(t.transform.position, transform.position)
+            if (distToTower <= closestDist)
             {
-                
+                closestDist = distToTower;
             }
-        }
+        }*/
+
     }
 }
