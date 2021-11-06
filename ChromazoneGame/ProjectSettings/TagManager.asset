@@ -8,6 +8,11 @@ TagManager:
   - Tower
   - Gold
   - Boundary
+  - Bullet
+  - gold
+  - goldItem
+  - healthItem
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
