@@ -16,7 +16,7 @@ public class TowerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponentsInChildren<Transform>()[1].localScale *= range;
     }
 
     // Update is called once per frame
