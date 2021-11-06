@@ -25,13 +25,11 @@ public class ShootBullets : MonoBehaviour
         {
             counter = 0;
             GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            var worldMousePosition =
-                Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+            var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
             var direction = worldMousePosition - transform.position;
             direction.z = 0;
             direction.Normalize();
             var velocity = direction * bulletSpeed;
-            Debug.Log(velocity.magnitude);
             spawnBullet.GetComponent<Rigidbody2D>().velocity = velocity;
         }
     }
