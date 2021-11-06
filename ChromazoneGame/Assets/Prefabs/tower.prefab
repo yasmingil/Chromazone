@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8369599513169125447}
   - component: {fileID: 6719910076140599606}
   - component: {fileID: 1178329571304912532}
+  - component: {fileID: 2603232049782513713}
+  - component: {fileID: 1662410468091831868}
   m_Layer: 0
   m_Name: tower
   m_TagString: Tower
@@ -96,13 +98,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4e8ab90a37864caf11cc992f23535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  maxHealth: 0
   range: 10
   towerColor: {r: 1, g: 1, b: 1, a: 0}
   bulletCooldown: 1
   damage: 50
   bulletSpeed: 10
   bullet: {fileID: 7473749547532530190, guid: 6f62757c572f19f43aafdebf509f91e7, type: 3}
+--- !u!50 &2603232049782513713
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572945056595977065}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1662410468091831868
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572945056595977065}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.984375, y: 0.984375}
+    newSize: {x: 0.984375, y: 0.984375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.984375, y: 0.984375}
+  m_EdgeRadius: 0
 --- !u!1001 &7327592728709357082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,7 +161,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1400335636253248836, guid: 34b1e22900ef45f43a64d4b1dac3c9fd, type: 3}
       propertyPath: m_Color.a
-      value: 0.47058824
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1400335636253248836, guid: 34b1e22900ef45f43a64d4b1dac3c9fd, type: 3}
       propertyPath: m_Color.b
@@ -140,11 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8703828646683083604, guid: 34b1e22900ef45f43a64d4b1dac3c9fd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8703828646683083604, guid: 34b1e22900ef45f43a64d4b1dac3c9fd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8703828646683083604, guid: 34b1e22900ef45f43a64d4b1dac3c9fd, type: 3}
       propertyPath: m_LocalPosition.x

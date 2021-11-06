@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
-    [SerializeField] private int Health;
+
+    [SerializeField] private int maxHealth;
+    int Health;
     [SerializeField] private float range;
     [SerializeField] private Color towerColor;
     [SerializeField] private float bulletCooldown;
@@ -16,7 +18,9 @@ public class TowerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Health = maxHealth;
         GetComponentsInChildren<Transform>()[1].localScale *= range;
+
     }
 
     // Update is called once per frame
@@ -38,10 +42,6 @@ public class TowerScript : MonoBehaviour
                 }
             }
         }
-
-
-
-
         //set the bullet speed and damage
         if (counter <= bulletCooldown || closestEnemy==null)
         {
@@ -56,8 +56,10 @@ public class TowerScript : MonoBehaviour
             spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
         }
 
-
-
+        //make circle more transparent based on health
+        Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
+        temp.a = (float)Health*0.5f/(float)maxHealth;
+        GetComponentsInChildren<SpriteRenderer>()[1].color = temp;
 
     }
 
