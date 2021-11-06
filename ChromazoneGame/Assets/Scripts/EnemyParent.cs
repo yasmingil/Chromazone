@@ -74,7 +74,7 @@ public class EnemyParent : MonoBehaviour
                 GameObject spawnHealthItem = Instantiate(healthItem, transform.position, Quaternion.identity);
             }
             
-            else if(chanceGold >= healthDropRate)
+            else if(chanceGold >= GoldDropRate)
             {
                 GameObject spawnHealthItem = Instantiate(goldItem, transform.position, Quaternion.identity);
             }
