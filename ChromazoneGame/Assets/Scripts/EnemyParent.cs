@@ -6,10 +6,10 @@ public class EnemyParent : MonoBehaviour
 {
     [SerializeField] private float goldDrop;
     [SerializeField] private float healthDrop;
-    [SerializeField] private float health;
+    [SerializeField] private int health = 100;
     [SerializeField] private float speed;
-    [SerializeField] private float towerDamage;
-    [SerializeField] private float playerDamage;
+    [SerializeField] private int towerDamage;
+    [SerializeField] private int playerDamage;
 
     [SerializeField] private GameObject target;
 
@@ -27,7 +27,7 @@ public class EnemyParent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject[] towers = GameObject.FindGameObjectsWithTag("tower");
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
         float min = 10000000000;
         GameObject minTower = null;
         foreach (GameObject tower in towers)
@@ -49,10 +49,23 @@ public class EnemyParent : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.tag == "tower")
+        if (c.gameObject.tag == "Tower")
         {
             Debug.Log("hit a tower");
             speed = 0f;
         }
+
+        else if(c.gameObject.tag == "Player")
+        {
+            // bomb damage if enemy touches player?
+            Debug.Log("Player bomb damage");
+            c.gameObject.GetComponent<PlayerStats>().ChangeHealth(playerDamage);
+        }
     }
+
+    public void ChangeHealth(int healthChange)
+    {
+        health += healthChange;
+    }
+
 }
