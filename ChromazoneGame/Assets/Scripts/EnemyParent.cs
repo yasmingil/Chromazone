@@ -27,15 +27,24 @@ public class EnemyParent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 targetPos = target.transform.position;
-        Vector3 ownerPos = transform.position;
-        Vector3 ownerToTarget = targetPos - ownerPos;
-        ownerToTarget.Normalize();
-
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        transform.position += ownerToTarget * speed * Time.deltaTime;
-
-
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("tower");
+        float min = 10000000000;
+        GameObject minTower = null;
+        foreach (GameObject tower in towers)
+        {
+            Vector3 targetPos = tower.transform.position;
+            Vector3 ownerPos = transform.position;
+            Vector3 ownerToTarget = targetPos - ownerPos;
+            float distance = ownerToTarget.magnitude;
+            if(distance < min)
+            {
+                min = distance;
+                minTower = tower;
+            }
+        }
+        Vector3 ownerToMinTarget = (minTower.transform.position - transform.position);
+        ownerToMinTarget.Normalize();
+        transform.position += ownerToMinTarget * speed * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D c)
