@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
                         closestDist = distToTower;
                     }
                 }
-
+                Debug.Log(closestDist);
                 if (closestDist <= towers[0].GetComponent<TowerScript>().GetRadius())
                 {
                     Instantiate(tower, placePosition, Quaternion.identity);
