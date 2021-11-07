@@ -19,13 +19,13 @@ public class EnemyParent : MonoBehaviour
     [SerializeField] private GameObject target;
 
     [SerializeField] private bool canMove;
-
+    private int frames = 0;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -48,7 +48,10 @@ public class EnemyParent : MonoBehaviour
         ownerToMinTarget.Normalize();
         transform.position += ownerToMinTarget * (speed * Time.deltaTime);
         transform.up = -ownerToMinTarget * (speed * Time.deltaTime);
+        
+        
     }
+    
 
     private void OnCollisionEnter2D(Collision2D c)
     {
