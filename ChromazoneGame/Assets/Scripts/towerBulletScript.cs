@@ -11,6 +11,7 @@ public class towerBulletScript : MonoBehaviour
     private GameObject target = null;
     private float rotateSpeed = 1000f;
     private bool pierce;
+    private int bounceCounter=0;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -53,11 +54,19 @@ public class towerBulletScript : MonoBehaviour
         Debug.Log(collision.tag);
         if(collision.CompareTag("Enemy"))
         {
-
             if (!pierce)
             {
                 Destroy(gameObject);
             }
+            bounceCounter++;
+            target = newTarget(target);
+            if(target == null || bounceCounter==3)
+            {
+                Destroy(gameObject);
+            }
+
+
+
         }
         else if (collision.tag == "Border")
         {
@@ -66,7 +75,29 @@ public class towerBulletScript : MonoBehaviour
         }
     }
 
+    private GameObject newTarget(GameObject t)
+    {
+        //same thing as find closest in range but take out all the range part
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closestEnemy = null;
+        float closestDist = 199999999;
+        if (enemies.Length > 0)
+        {
+            foreach (var g in enemies)
+            {
+                float distance = Vector3.Distance(transform.position, g.transform.position);
 
+                if (g != target && distance < closestDist)
+                {
+                    closestEnemy = g;
+                    closestDist = distance;
+                }
+            }
+            return closestEnemy;
+        }
+        return null;
+
+    }
 
 
     public void SetDamage(int d)
