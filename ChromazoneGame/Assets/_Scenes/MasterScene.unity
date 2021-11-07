@@ -811,6 +811,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 204929861}
     - target: {fileID: 5693703433033217266, guid: d19491991813ce147b48de181bea1cb4, type: 3}
+      propertyPath: bomberPrefab
+      value: 
+      objectReference: {fileID: 1106369251214455403, guid: 41ed9b84b02d31a4ea9462a0bcaa7397, type: 3}
+    - target: {fileID: 5693703433033217266, guid: d19491991813ce147b48de181bea1cb4, type: 3}
+      propertyPath: gunnerPrefab
+      value: 
+      objectReference: {fileID: 4741603717979037373, guid: ab8c0e09bc5986f4bad5935467e2d257, type: 3}
+    - target: {fileID: 5693703433033217266, guid: d19491991813ce147b48de181bea1cb4, type: 3}
       propertyPath: waves.Array.data[0].timeInSeconds
       value: 100
       objectReference: {fileID: 0}
