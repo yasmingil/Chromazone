@@ -155,6 +155,8 @@ public class PlayerController : MonoBehaviour
                 {
                     Instantiate(tower, placePosition, Quaternion.identity);
                     currentState = playerState.SHOOTING;
+                    placementUI.enabled = false;
+                    radiusUI.enabled = false;
                 }
             }
             
