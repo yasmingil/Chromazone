@@ -16,6 +16,7 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     [SerializeField] private GameObject smallBullet;
     [SerializeField] private GameObject bigBullet;
+    [SerializeField] private int bounces;
     private float counter = 0f;
 
     private enum ShotType { SPREAD, SINGLE };
@@ -97,6 +98,7 @@ public class TowerScript : MonoBehaviour
             spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
             spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
             spawnBullet.GetComponent<towerBulletScript>().SetPierce(pierce);
+            spawnBullet.GetComponent<towerBulletScript>().SetBounce(bounces);
         }
         
        

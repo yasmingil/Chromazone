@@ -12,6 +12,7 @@ public class towerBulletScript : MonoBehaviour
     private float rotateSpeed = 1000f;
     private bool pierce;
     private int bounceCounter=0;
+    private int bounces;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -58,9 +59,10 @@ public class towerBulletScript : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+
             bounceCounter++;
             target = newTarget(target);
-            if(target == null || bounceCounter==3)
+            if(target == null || bounceCounter==bounces)
             {
                 Destroy(gameObject);
             }
@@ -115,5 +117,9 @@ public class towerBulletScript : MonoBehaviour
     public void SetPierce(bool p)
     {
         pierce = p;
+    }
+    public void SetBounce(int b)
+    {
+        bounces = b;
     }
 }
