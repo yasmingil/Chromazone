@@ -8,17 +8,21 @@ public class Gunner : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float bulletCooldown;
     private float counter = 0f;
+     private GameObject player;
     [SerializeField] private enum shotType { SPREAD, SINGLE };
     [SerializeField] private GameObject bullet;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 dir = transform.position - player.transform.position;
+        dir.z = 0;
+        transform.up = dir;
         // constant shooting of bullets
         if (counter <= bulletCooldown)
         {
@@ -31,7 +35,6 @@ public class Gunner : MonoBehaviour
             // Get player position
             spawnBullet.GetComponent<Bullet>().SetBulletDamage(damage);
             spawnBullet.GetComponent<Bullet>().SetIsEnemy(true);
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
             var direction = player.transform.position - transform.position;
             direction.z = 0;
             direction.Normalize();
