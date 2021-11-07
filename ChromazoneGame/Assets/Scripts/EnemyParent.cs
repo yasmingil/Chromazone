@@ -49,17 +49,9 @@ public class EnemyParent : MonoBehaviour
         transform.position += ownerToMinTarget * (speed * Time.deltaTime);
         transform.up = -ownerToMinTarget * (speed * Time.deltaTime);
         
-        frames++;
-        if (frames % 10 == 0) 
-        { //If the remainder of the current frame divided by 10 is 0 run the function.
-            Frame10Update();
-        }
         
     }
-    void Frame10Update()
-    {
-        Debug.Log(health);
-    }
+    
 
     private void OnCollisionEnter2D(Collision2D c)
     {
