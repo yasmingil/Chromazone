@@ -86,12 +86,12 @@ public class EnemyParent : MonoBehaviour
             int chanceGold = Random.Range(1,100);
             if(chanceHealth >= healthDropRate)
             {
-                GameObject spawnHealthItem = Instantiate(healthItem, transform.position, Quaternion.identity);
+                Instantiate(healthItem, transform.position, Quaternion.identity);
             }
             
             else if(chanceGold >= goldDropRate)
             {
-                GameObject spawnHealthItem = Instantiate(goldItem, transform.position, Quaternion.identity);
+                Instantiate(goldItem, transform.position, Quaternion.identity);
             }
             Destroy(gameObject);
             GameObject.FindObjectOfType<AudioManager>().EnemyDie();

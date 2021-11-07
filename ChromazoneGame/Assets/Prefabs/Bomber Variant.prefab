@@ -81,7 +81,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522903, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: m_Name
-      value: Bomber
+      value: Bomber Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522908, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522908, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

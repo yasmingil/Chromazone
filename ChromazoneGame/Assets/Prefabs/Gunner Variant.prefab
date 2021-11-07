@@ -104,6 +104,10 @@ PrefabInstance:
       value: Gunner Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522908, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522908, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 3.7210665
       objectReference: {fileID: 0}
