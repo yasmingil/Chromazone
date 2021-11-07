@@ -15,15 +15,18 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private GameObject Bullet;
-
     [SerializeField] private int bounces;
     private float counter = 0f;
 
     private enum ShotType { SPREAD, SINGLE };
     [SerializeField] private ShotType towertype;
     private bool pierce;
+
+    GameObject gameManager = GameObject.Find("GameManager");
+
     void Start()
     {
+ 
         Health = maxHealth;
 
         //see if the bullet pierces or not
@@ -127,20 +130,18 @@ Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
         Debug.Log("take dmg " + Health);
         if (Health <= 0)
         {
-            Debug.Log("die");
-            Destroy(gameObject);
             GameObject.FindObjectOfType<AudioManager>().RemoveTowerLayer();
+            Debug.Log("die");
+            if(gameObject.name == "CORE")
+            {
+                gameManager.GetComponent<GameManager>().LoseGame();
+            }
+            Destroy(gameObject);
+
+
         }
     }
-    private Quaternion RotateGun(GameObject target, GameObject origion)
-    {
-        float speed = 5f;
 
-        Vector2 direction = target.transform.position - origion.transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        return Quaternion.Lerp(origion.transform.rotation, rotation, speed * Time.deltaTime);
-    }
     public void Heal(int h)
     {
         Health += h;
