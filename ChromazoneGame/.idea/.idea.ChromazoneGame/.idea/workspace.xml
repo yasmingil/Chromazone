@@ -92,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636178351453</updated>
       <workItem from="1636178368383" duration="6352000" />
-      <workItem from="1636228695264" duration="11097000" />
+      <workItem from="1636228695264" duration="11513000" />
     </task>
     <servers />
   </component>
@@ -115,5 +115,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1636244471922">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1636244471922" />
   </component>
 </project>

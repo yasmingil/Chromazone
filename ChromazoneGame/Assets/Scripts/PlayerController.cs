@@ -127,7 +127,41 @@ public class PlayerController : MonoBehaviour
             spawnBullet.GetComponent<Rigidbody2D>().velocity = velocity;
         }
     }
-
+    private void PlaceTower(GameObject tower)
+    {
+        var placeDir = (worldMousePosition - transform.position).normalized;
+        Debug.Log(worldMousePosition.z);
+        //Debug.Log("Transform z: " + transform.position.z);
+        float distance = Vector3.Distance(transform.position, worldMousePosition);
+        distance = Mathf.Min(distance, placementRadius);
+        var placePosition = transform.position + placeDir * distance;
+        placementUI.transform.position = placePosition;
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+            if (towers.Length != 0)
+            {
+                float closestDist = float.MaxValue;
+                foreach (var t in towers)
+                {
+                    float distToTower = Vector3.Distance(t.transform.position, transform.position);
+                    if (distToTower <= closestDist)
+                    {
+                        closestDist = distToTower;
+                    }
+                }
+                Debug.Log(closestDist);
+                if (closestDist <= towers[0].GetComponent<TowerScript>().GetRadius())
+                {
+                    Instantiate(tower, placePosition, Quaternion.identity);
+                    currentState = playerState.SHOOTING;
+                    placementUI.enabled = false;
+                    radiusUI.enabled = false;
+                }
+            }
+            
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "goldItem")
@@ -137,7 +171,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.tag == "healthItem")
         {
-            Destroy(other); 
+            Destroy(other);
             GetComponent<PlayerStats>().ChangeHealth(10);
         }
     }
