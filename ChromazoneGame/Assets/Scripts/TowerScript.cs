@@ -75,8 +75,8 @@ public class TowerScript : MonoBehaviour
         //make towerhealthindi be proportional to health
 
         GameObject canvas = gameObject.transform.GetChild(1).gameObject;
-        GameObject HPBar = canvas.transform.GetChild(1).gameObject;
-        HPBar.GetComponent<Image>().fillAmount = (Health / maxHealth);
+        GameObject HPBar = canvas.transform.GetChild(0).gameObject;
+        HPBar.GetComponent<Image>().fillAmount = Health/maxHealth;
 
     }
 
