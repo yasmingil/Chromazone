@@ -661,5 +661,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19cc0efb7414145498050d9256143a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldAmt: 0
+  goldAmt: 200
   goldValue: 20

@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
                     currentState = playerState.SHOOTING;
                     placementUI.enabled = false;
                     radiusUI.enabled = false;
-                    GetComponent<PlayerStats>().ChangeGold(tower.GetComponent<TowerScript>().GetCost());
+                    GetComponent<PlayerStats>().ChangeGold(-tower.GetComponent<TowerScript>().GetCost());
                 }
             }
             
