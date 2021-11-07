@@ -110,6 +110,7 @@ public class TowerScript : MonoBehaviour
         {
             Debug.Log("die");
             Destroy(gameObject);
+            GameObject.FindObjectOfType<AudioManager>().RemoveTowerLayer();
         }
     }
     public void Heal(int h)

@@ -60,5 +60,7 @@ public class TowerPlacement : MonoBehaviour
                 
             }
         }
+
+        GameObject.FindObjectOfType<AudioManager>().AddTowerLayer();
     }
 }
