@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8440367327251442965}
   - component: {fileID: 7863067543439507838}
   m_Layer: 0
-  m_Name: TowerBigBullet
+  m_Name: zbullet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

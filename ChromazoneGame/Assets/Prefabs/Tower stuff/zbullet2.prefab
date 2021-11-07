@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5912334371386067736}
   - component: {fileID: -8559647856829887010}
   m_Layer: 0
-  m_Name: TowerSmallBullet
+  m_Name: zbullet2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

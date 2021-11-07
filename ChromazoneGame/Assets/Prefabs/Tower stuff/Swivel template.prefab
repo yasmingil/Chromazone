@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 068e4ffa0b7cdea4d85bc3c11b709ce7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4ffcdba6bd1d1cd4fbfa166ae322223b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -177,15 +177,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 572945056595977065, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_Name
-      value: towerSwivel
+      value: Swivel template
       objectReference: {fileID: 0}
     - target: {fileID: 572945056595977065, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: bulletSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5399892206491315395, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_Color.a
       value: 0.03529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399892206491315395, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6719910076140599606, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_Enabled
