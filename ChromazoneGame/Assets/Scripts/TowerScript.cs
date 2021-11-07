@@ -64,10 +64,24 @@ public class TowerScript : MonoBehaviour
                     closestDist = distance;
                 }
             }
+            GameObject gun = GetComponentsInChildren<Transform>()[4].gameObject;
+            Debug.Log("name" + gun.name);
+            if (closestEnemy != null)
+            {
+                gun.transform.up = gun.transform.position - closestEnemy.transform.position;
+            }
+
         }
 
-        //make circle more transparent based on health
-        Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
+        
+
+
+
+
+
+
+//make circle more transparent based on health
+Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
         temp.a = (float)Health / (float)maxHealth;
         GetComponentsInChildren<SpriteRenderer>()[1].color = temp;
 
@@ -85,6 +99,7 @@ public class TowerScript : MonoBehaviour
         {
 
             counter = 0;
+
 
             /*
             float angle = Vector3.Angle(transform.position, closestEnemy.transform.position);
@@ -116,6 +131,15 @@ public class TowerScript : MonoBehaviour
             Destroy(gameObject);
             GameObject.FindObjectOfType<AudioManager>().RemoveTowerLayer();
         }
+    }
+    private Quaternion RotateGun(GameObject target, GameObject origion)
+    {
+        float speed = 5f;
+
+        Vector2 direction = target.transform.position - origion.transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        return Quaternion.Lerp(origion.transform.rotation, rotation, speed * Time.deltaTime);
     }
     public void Heal(int h)
     {

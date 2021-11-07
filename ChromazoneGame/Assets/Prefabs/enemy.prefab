@@ -124,7 +124,7 @@ MonoBehaviour:
   goldDropValue: 3
   healthDropValue: 5
   health: 100
-  speed: 0.5
+  speed: 2
   towerDamage: 1
   playerDamage: 1
   healthItem: {fileID: 8446894845875383216, guid: 786fed490cafd40e7b1d77760277cf91, type: 3}
