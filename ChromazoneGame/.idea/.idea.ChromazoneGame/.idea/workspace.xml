@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b19e2e03-a9a3-4ae4-809e-48e76f1a7d96" name="Default Changelist" comment="" />
+    <list default="true" id="b19e2e03-a9a3-4ae4-809e-48e76f1a7d96" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TowerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TowerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/VirgilScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/VirgilScene.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +48,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/towerBulletScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TowerScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" />
       </list>
     </option>
   </component>
