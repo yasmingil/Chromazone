@@ -63,6 +63,8 @@ public class towerBulletScript : MonoBehaviour
         Debug.Log(collision.tag);
         if(collision.CompareTag("Enemy"))
         {
+            collision.gameObject.GetComponent<EnemyParent>().ChangeHealth(-damage);
+
             if (!pierce)
             {
                 Destroy(gameObject);
