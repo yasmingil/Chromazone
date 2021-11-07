@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5693703433033217267}
   - component: {fileID: 5693703433033217266}
   - component: {fileID: 5693703433033217265}
-  - component: {fileID: 1519722829086719573}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45,12 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4018b019362384487d708412ab00fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomberPrefab: {fileID: 5389809497199522903, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
-  gunnerPrefab: {fileID: 5389809497199522903, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+  bomberPrefab: {fileID: 1106369251214455403, guid: 41ed9b84b02d31a4ea9462a0bcaa7397, type: 3}
+  gunnerPrefab: {fileID: 4741603717979037373, guid: ab8c0e09bc5986f4bad5935467e2d257, type: 3}
+  playArea: {fileID: 0}
+  turretRangeLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  percentDisplay: {fileID: 0}
   waves:
-  - timeInSeconds: 0
-    enemiesPerSecond: 0
-    percentEnemiesGunners: 0
+  - timeInSeconds: 100
+    enemiesPerSecond: 2
+    percentEnemiesGunners: 13
 --- !u!114 &5693703433033217265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,20 +68,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playArea: {fileID: 0}
---- !u!114 &1519722829086719573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693703433033217264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e31e816349a904abea411c3bc951ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerSources: []
-  intensitySource: {fileID: 0}
-  fadeTime: 0
-  minEnemiesPerSecond: 0
-  maxEnemiesPerSecond: 0

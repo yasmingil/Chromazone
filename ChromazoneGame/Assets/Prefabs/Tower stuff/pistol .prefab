@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 50e79e108fb25f748884e4c6f1643454, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 35c774c6f20798743a3d903c79b08596, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: range
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: Bullet
@@ -197,11 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569999, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.06
+      value: -2.468746
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569999, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.49
+      value: -1.436301
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569999, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -235,7 +235,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7147343201122913802, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343201122913802, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343201122913802, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343201122913802, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343201122913802, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b9355b1e07cd12e4abe368ec1a592ac7, type: 2}
+    m_RemovedComponents:
+    - {fileID: 7147343199955569998, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
 --- !u!4 &3202457936781034637 stripped
 Transform:

@@ -38,6 +38,9 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); 
     }
 }

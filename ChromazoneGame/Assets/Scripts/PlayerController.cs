@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image placementUI;
     
     [SerializeField] private float speed;
-    private Vector2 playerInput = new Vector2();
+    private Vector2 playerInput;
     private Rigidbody2D rb;
     private Vector3 worldMousePosition;
     
@@ -48,24 +48,52 @@ public class PlayerController : MonoBehaviour
         transform.up = transform.position - worldMousePosition;
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            radiusUI.enabled = true;
-            placementUI.enabled = true;
+            
             currentSelectedTower = tower1;
-            currentState = playerState.PLACING;
+            if (currentState == playerState.PLACING)
+            {
+                currentState = playerState.SHOOTING;
+                placementUI.enabled = false;
+                radiusUI.enabled = false;
+            }
+            else
+            {
+                radiusUI.enabled = true;
+                placementUI.enabled = true;
+                currentState = playerState.PLACING;
+            }
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            radiusUI.enabled = true;
-            placementUI.enabled = true;
             currentSelectedTower = tower2;
-            currentState = playerState.PLACING;
+            if (currentState == playerState.PLACING)
+            {
+                currentState = playerState.SHOOTING;
+                placementUI.enabled = false;
+                radiusUI.enabled = false;
+            }
+            else
+            {
+                radiusUI.enabled = true;
+                placementUI.enabled = true;
+                currentState = playerState.PLACING;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            radiusUI.enabled = true;
-            placementUI.enabled = true;
             currentSelectedTower = tower3;
-            currentState = playerState.PLACING;
+            if (currentState == playerState.PLACING)
+            {
+                currentState = playerState.SHOOTING;
+                placementUI.enabled = false;
+                radiusUI.enabled = false;
+            }
+            else
+            {
+                radiusUI.enabled = true;
+                placementUI.enabled = true;
+                currentState = playerState.PLACING;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -90,7 +118,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (currentState == playerState.PLACING)
         {
-
+            Move();
             PlaceTower(currentSelectedTower);
         }
     }
@@ -131,7 +159,6 @@ public class PlayerController : MonoBehaviour
     private void PlaceTower(GameObject tower)
     {
         var placeDir = (worldMousePosition - transform.position).normalized;
-        Debug.Log(worldMousePosition.z);
         //Debug.Log("Transform z: " + transform.position.z);
         float distance = Vector3.Distance(transform.position, worldMousePosition);
         distance = Mathf.Min(distance, placementRadius);
@@ -163,6 +190,8 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+
+        GameObject.FindObjectOfType<AudioManager>().AddTowerLayer();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
