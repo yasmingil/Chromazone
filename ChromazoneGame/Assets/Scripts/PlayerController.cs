@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image placementUI;
     
     [SerializeField] private float speed;
-    private Vector2 playerInput = new Vector2();
+    private Vector2 playerInput;
     private Rigidbody2D rb;
     private Vector3 worldMousePosition;
     
