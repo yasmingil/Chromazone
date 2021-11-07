@@ -54,6 +54,7 @@ public class EnemyParent : MonoBehaviour
         if (c.gameObject.tag == "Tower")
         {
             Debug.Log("hit a tower");
+            c.gameObject.GetComponent<TowerScript>().TakeDamage(towerDamage);
             Destroy(gameObject);
         }
 
@@ -62,6 +63,7 @@ public class EnemyParent : MonoBehaviour
             // bomb damage if enemy touches player?
             Debug.Log("Player bomb damage");
             c.gameObject.GetComponent<PlayerStats>().ChangeHealth(playerDamage);
+            Destroy(gameObject);
         }
         
     }

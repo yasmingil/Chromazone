@@ -170,6 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  bulletSpeed: 10
-  bulletCooldown: 0
+  bulletSpeed: 5
+  bulletCooldown: 1
   bullet: {fileID: 5071316852233235431, guid: 2302eab2de7a7bc47beda0d2ac2dedd1, type: 3}
