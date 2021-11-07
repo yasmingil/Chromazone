@@ -297,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   cost: 50
-  range: 2
+  range: 3
   towerColor: {r: 1, g: 1, b: 1, a: 0}
   bulletCooldown: 0.5
   damage: 50

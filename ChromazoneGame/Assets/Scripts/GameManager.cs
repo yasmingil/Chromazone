@@ -67,15 +67,13 @@ public class GameManager : MonoBehaviour
     {
         if (waveTimer >= currentWave.timeInSeconds)
         {
-            Debug.Log("WAVE CHANGED");
-            currentWaveIndex++;
-            if (currentWaveIndex < waves.Count)
+            if (currentWaveIndex < waves.Count - 1)
             {
+                currentWaveIndex++;
                 currentWave = waves[currentWaveIndex];
+                waveTimer = 0;
+                waveDisplay.text = "Wave: " + (currentWaveIndex + 1);
             }
-            Debug.Log(currentWave.enemiesPerSecond);
-            waveTimer = 0;
-            waveDisplay.text = "Wave: " + (currentWaveIndex + 1);
         }
     }
 

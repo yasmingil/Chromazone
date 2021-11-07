@@ -1312,7 +1312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693703433033217266, guid: d19491991813ce147b48de181bea1cb4, type: 3}
       propertyPath: waves.Array.data[0].timeInSeconds
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5693703433033217266, guid: d19491991813ce147b48de181bea1cb4, type: 3}
       propertyPath: waves.Array.data[1].timeInSeconds
@@ -1336,7 +1336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693703433033217266, guid: d19491991813ce147b48de181bea1cb4, type: 3}
       propertyPath: waves.Array.data[0].percentEnemiesGunners
-      value: 23.9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5693703433033217266, guid: d19491991813ce147b48de181bea1cb4, type: 3}
       propertyPath: waves.Array.data[1].percentEnemiesGunners
