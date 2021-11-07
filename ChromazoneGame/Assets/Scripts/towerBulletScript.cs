@@ -53,14 +53,15 @@ public class towerBulletScript : MonoBehaviour
         Debug.Log(collision.tag);
         if(collision.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
-        }
-        else if (collision.tag == "Border")
-        {
+
             if (!pierce)
             {
                 Destroy(gameObject);
             }
+        }
+        else if (collision.tag == "Border")
+        {
+            Destroy(gameObject);
 
         }
     }
