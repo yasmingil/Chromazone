@@ -184,8 +184,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7473749547532530190, guid: 6f62757c572f19f43aafdebf509f91e7, type: 3}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: bounces
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: towertype
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: bulletCooldown
@@ -237,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147343201002814994, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
