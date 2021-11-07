@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject bomberPrefab;
     [SerializeField] private GameObject gunnerPrefab;
+    [SerializeField] private Transform playArea;
+    [SerializeField] private LayerMask turretRangeLayerMask;
+    [SerializeField] private TMP_Text percentDisplay;
 
     [SerializeField] private List<Wave> waves;
 
@@ -22,6 +26,7 @@ public class GameManager : MonoBehaviour
     private int currentWaveIndex;
     private float waveTimer = 0;
     private float spawnTimer = 0;
+    private float percentCovered;
 
     void Start()
     {
@@ -67,9 +72,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void UpdateFillPercent()
+    private IEnumerator UpdateFillPercent()
     {
+        int numRaysHit = 0;
 
+        for (int i = 0; i < 100; i++)
+        {
+            float rayStartY = ((playArea.localScale.y / 100) * i) - ((playArea.localScale.y / 2) - playArea.position.y);
+            for (int j = 0; j < 100; j++)
+            {
+                float rayStartX = ((playArea.localScale.x / 100) * j) - ((playArea.localScale.x / 2) - playArea.position.x);
+                Vector3 rayStartPos = new Vector3(rayStartX, rayStartY, -.5f);
+                if (Physics.Raycast(rayStartPos, Vector3.forward, 1f, turretRangeLayerMask))
+                {
+                    numRaysHit++;
+                }
+            }
+            yield return new WaitForSeconds(1 / 100f);
+        }
+
+        percentCovered = numRaysHit / 100;
+        percentDisplay.text = percentCovered.ToString();
     }
 
     public float GetCurrentEnemiesPerSecond()

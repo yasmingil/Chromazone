@@ -13,6 +13,7 @@ TagManager:
   - goldItem
   - healthItem
   - PlayerBullet
+  - tower
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - TowerRange
   - 
   - 
   - 
