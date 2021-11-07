@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    [Header("Music")]
     [SerializeField] private List<AudioSource> towerSources;
     [SerializeField] private AudioSource intensitySource;
     [SerializeField] private float fadeTime;
@@ -13,6 +14,9 @@ public class AudioManager : MonoBehaviour
     private int numTowers;
     private float startingTowerVolume;
     private float startingIntensityVolume;
+
+    [Header("SFX")]
+    [SerializeField] private AudioSource effectSource;
 
     private void Start()
     {
