@@ -119,12 +119,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4a624373a794848bb223fedb95abbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldDrop: 1
-  healthDrop: 1
-  health: 1
-  speed: 5
+  goldDropRate: 50
+  healthDropRate: 50
+  goldDropValue: 3
+  healthDropValue: 5
+  health: 100
+  speed: 0.5
   towerDamage: 1
   playerDamage: 1
+  healthItem: {fileID: 8446894845875383216, guid: 786fed490cafd40e7b1d77760277cf91, type: 3}
+  goldItem: {fileID: 1851207305614933561, guid: 07d0c66d5fb5c4924b3f3df2e333cb1a, type: 3}
   target: {fileID: 0}
   canMove: 0
 --- !u!61 &5389809497199522908
@@ -167,4 +171,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   bulletSpeed: 10
+  bulletCooldown: 0
   bullet: {fileID: 5071316852233235431, guid: 2302eab2de7a7bc47beda0d2ac2dedd1, type: 3}
