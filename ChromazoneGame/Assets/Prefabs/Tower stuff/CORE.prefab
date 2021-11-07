@@ -171,6 +171,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5070058863905044219, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151254229210154086, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569994, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: m_Name
       value: CORE
@@ -189,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: towertype
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: bulletCooldown
