@@ -241,8 +241,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f2e93f81bff0bb249a5322d3b94fa5fc, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 7932660817074446925}
   - component: {fileID: 110801488}
   - component: {fileID: -1142190242107456150}
+  - component: {fileID: 691940964}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -326,7 +327,7 @@ SpriteRenderer:
   m_SortingLayerID: 1271874201
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 680b8759f090e1c4f83fdb5ee3c95190, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -408,3 +409,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &691940964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932660817074446921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19cc0efb7414145498050d9256143a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  goldAmt: 0
+  goldValue: 20

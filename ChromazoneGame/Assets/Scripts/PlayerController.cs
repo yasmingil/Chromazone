@@ -51,7 +51,14 @@ public class PlayerController : MonoBehaviour
             radiusUI.enabled = true;
             placementUI.enabled = true;
             currentSelectedTower = tower1;
-            currentState = playerState.PLACING;
+            if (currentState == playerState.PLACING)
+            {
+                currentState = playerState.SHOOTING;
+            }
+            else
+            {
+                currentState = playerState.PLACING;
+            }
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -59,6 +66,14 @@ public class PlayerController : MonoBehaviour
             placementUI.enabled = true;
             currentSelectedTower = tower2;
             currentState = playerState.PLACING;
+            if (currentState == playerState.PLACING)
+            {
+                currentState = playerState.SHOOTING;
+            }
+            else
+            {
+                currentState = playerState.PLACING;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -66,6 +81,14 @@ public class PlayerController : MonoBehaviour
             placementUI.enabled = true;
             currentSelectedTower = tower3;
             currentState = playerState.PLACING;
+            if (currentState == playerState.PLACING)
+            {
+                currentState = playerState.SHOOTING;
+            }
+            else
+            {
+                currentState = playerState.PLACING;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
