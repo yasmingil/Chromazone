@@ -58,7 +58,7 @@ public class TowerScript : MonoBehaviour
 
         //make circle more transparent based on health
         Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
-        temp.a = (float)Health*0.25f/(float)maxHealth;
+        temp.a = (float)Health/(float)maxHealth;
         GetComponentsInChildren<SpriteRenderer>()[1].color = temp;
 
     }
