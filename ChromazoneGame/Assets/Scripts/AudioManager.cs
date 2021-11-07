@@ -5,11 +5,13 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("Music")]
+    [SerializeField] private AudioSource coreSource;
     [SerializeField] private List<AudioSource> towerSources;
     [SerializeField] private AudioSource intensitySource;
     [SerializeField] private float fadeTime;
     [SerializeField] private float minEnemiesPerSecond;
     [SerializeField] private float maxEnemiesPerSecond;
+    [SerializeField] private float fadeDieTime;
 
     private int numTowers;
     private float startingTowerVolume;
@@ -62,6 +64,17 @@ public class AudioManager : MonoBehaviour
         intensitySource.volume = startingIntensityVolume * enemiesPerSecondPercent;
     }
 
+    public void PlayerDie()
+    {
+        StartCoroutine(FadeDie(coreSource));
+        StartCoroutine(FadeDie(intensitySource));
+
+        foreach (AudioSource s in towerSources)
+        {
+            StartCoroutine(FadeDie(s));
+        }
+    }
+
     private IEnumerator FadeIn(AudioSource source, float time, float workingVolume)
     {
         bool finished = false;
@@ -83,6 +96,24 @@ public class AudioManager : MonoBehaviour
         while (!finished)
         {
             source.volume -= workingVolume * 0.01f * (1 / time);
+            if (source.volume <= 0)
+            {
+                source.volume = 0;
+                finished = true;
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
+
+    private IEnumerator FadeDie(AudioSource source)
+    {
+        float workingVolume = source.volume;
+        float workingPitch = source.pitch;
+        bool finished = false;
+        while (!finished)
+        {
+            source.volume -= workingVolume * 0.01f * (1 / fadeDieTime);
+            source.pitch -= workingPitch * 0.01f * (1 / fadeDieTime);
             if (source.volume <= 0)
             {
                 source.volume = 0;
