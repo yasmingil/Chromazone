@@ -374,9 +374,9 @@ MonoBehaviour:
   bulletCooldown: 0.2
   bulletSpeed: 10
   bulletDamage: 0
-  tower1: {fileID: 572945056595977065, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
-  tower2: {fileID: 572945056595977065, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
-  tower3: {fileID: 572945056595977065, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+  tower1: {fileID: 3202457936781034632, guid: aada795fefa06754f90dbbcbda156f0e, type: 3}
+  tower2: {fileID: 6246401094252228920, guid: 89929c6a4c359d64b874f681874f36b3, type: 3}
+  tower3: {fileID: 4812470962616502176, guid: 0886b41d42ae457498cdecae9a6e9a89, type: 3}
   placementRadius: 3
   radiusUI: {fileID: 1416399997}
   placementUI: {fileID: 1636640977}
