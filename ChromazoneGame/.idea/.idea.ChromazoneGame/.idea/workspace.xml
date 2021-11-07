@@ -20,9 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b19e2e03-a9a3-4ae4-809e-48e76f1a7d96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TowerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TowerScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/VirgilScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/VirgilScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
