@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerScript : MonoBehaviour
 {
 
     [SerializeField] private int maxHealth;
     int Health;
+    [SerializeField] private int cost;
     [SerializeField] private float range;
     [SerializeField] private Color towerColor;
     [SerializeField] private float bulletCooldown;
@@ -18,8 +20,18 @@ public class TowerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+
+
         Health = maxHealth;
+
+        //set size of range and tower hp indicator
         GetComponentsInChildren<Transform>()[1].localScale *= range;
+        GetComponentsInChildren<Transform>()[2].localScale *= range;
+        // transfer color of tower to range
+        // GetComponentsInChildren<SpriteRenderer>()[1].color = GetComponentsInChildren<SpriteRenderer>()[0].color;
+
 
     }
 
@@ -60,6 +72,9 @@ public class TowerScript : MonoBehaviour
         Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
         temp.a = (float)Health/(float)maxHealth;
         GetComponentsInChildren<SpriteRenderer>()[1].color = temp;
+        //make towerhealthindi be proportional to health
+
+        GetComponentInChildren<Image>().fillAmount = (float)Health*0.5f / (float)maxHealth;
 
     }
 
@@ -79,5 +94,9 @@ public class TowerScript : MonoBehaviour
     public float GetRadius()
     {
         return range;
+    }
+    public int GetCost()
+    {
+        return cost;
     }
 }
