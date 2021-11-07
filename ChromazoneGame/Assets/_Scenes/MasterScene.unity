@@ -2156,7 +2156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 110801488, guid: d89ee3d5482a53442afde8397679f3ad, type: 3}
       propertyPath: bulletCooldown
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 1210950958, guid: d89ee3d5482a53442afde8397679f3ad, type: 3}
       propertyPath: m_SizeDelta.x
