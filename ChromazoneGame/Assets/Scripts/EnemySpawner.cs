@@ -12,20 +12,9 @@ public class EnemySpawner : MonoBehaviour
 
     private float timer;
 
-    private void Update()
-    {
-        timer += Time.deltaTime;
-
-        if (timer >= .05)
-        {
-            SpawnEnemy(enemyPrefab);
-            timer = 0f;
-        }
-    }
-
     public void SpawnEnemy(GameObject enemy)
     {
-        GameObject[] towers = GameObject.FindGameObjectsWithTag("tower");
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
         Vector3 spawnPosition = new Vector3();
 
         bool validPlace = false;
