@@ -63,6 +63,8 @@ public class towerBulletScript : MonoBehaviour
         Debug.Log(collision.tag);
         if(collision.CompareTag("Enemy"))
         {
+            collision.gameObject.GetComponent<EnemyParent>().ChangeHealth(-damage);
+
             if (!pierce)
             {
                 Destroy(gameObject);
@@ -78,7 +80,7 @@ public class towerBulletScript : MonoBehaviour
 
 
         }
-        else if (collision.tag == "Border")
+        else if (collision.CompareTag("Boundary"))
         {
             Destroy(gameObject);
 

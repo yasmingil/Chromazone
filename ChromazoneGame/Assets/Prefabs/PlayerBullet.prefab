@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ffd0b8b52e5174e95b9669d9e11a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletDamage: 0
+  BulletDamage: 50
   isEnemy: 0
 --- !u!50 &3587841968928065761
 Rigidbody2D:
