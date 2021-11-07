@@ -62,6 +62,11 @@ public class AudioManager : MonoBehaviour
         float enemiesPerSecondRange = maxEnemiesPerSecond - minEnemiesPerSecond;
         float enemiesPerSecondPercent = (GameObject.FindObjectOfType<GameManager>().GetCurrentEnemiesPerSecond() - minEnemiesPerSecond) / enemiesPerSecondRange;
 
+        if (enemiesPerSecondPercent > 1)
+        {
+            enemiesPerSecondPercent = 1;
+        }
+
         intensitySource.volume = startingIntensityVolume * enemiesPerSecondPercent;
     }
 
