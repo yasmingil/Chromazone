@@ -22,11 +22,12 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private ShotType towertype;
     private bool pierce;
 
-    GameObject gameManager = GameObject.Find("GameManager");
+    GameObject gameManager;
 
     void Start()
     {
- 
+        gameManager = GameObject.Find("GameManager");
+
         Health = maxHealth;
 
         //see if the bullet pierces or not
