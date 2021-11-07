@@ -5,10 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Transform playArea;
-    [SerializeField] private GameObject enemyPrefab;
-
-    [SerializeField] private GameObject testingTower;
-    [SerializeField] private float testingRadius;
 
     private float timer;
 
@@ -53,9 +49,7 @@ public class EnemySpawner : MonoBehaviour
             validPlace = true;
             foreach (GameObject tower in towers)
             {
-                //if (tower.GetComponent<TowerScript>().GetRadius())
-
-                if (Vector3.Distance(spawnPosition, tower.transform.position) < testingRadius)
+                if (Vector3.Distance(spawnPosition, tower.transform.position) < tower.GetComponent<TowerScript>().GetRadius())
                 {
                     validPlace = false;
                 }
