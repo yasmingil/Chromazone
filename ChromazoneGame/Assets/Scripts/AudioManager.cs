@@ -18,12 +18,12 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        startingTowerVolume = towerSources[0].volume;
+        /*startingTowerVolume = towerSources[0].volume;
 
         foreach (AudioSource s in towerSources)
         {
             s.volume = 0;
-        }
+        }*/
     }
 
     private void Update()
