@@ -741,8 +741,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1414976017}
   - {fileID: 1458701777}
+  - {fileID: 1414976017}
   - {fileID: 1857464474}
   - {fileID: 322711967}
   - {fileID: 735120819}
@@ -790,7 +790,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 980, y: 612.5}
+  m_SizeDelta: {x: 971, y: 606.875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701894196
 MonoBehaviour:
@@ -1243,7 +1243,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 684857580}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1368,10 +1368,10 @@ MonoBehaviour:
 
     Ethan Lee
 
-    Yasmin
-    Gil
+    Yasmin Gil
 
-    Ryan Lau
+    Ryan
+    Lau
 
     Yusan Wong
 
@@ -1418,7 +1418,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 684857580}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
