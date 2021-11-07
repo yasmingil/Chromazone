@@ -161,7 +161,22 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         
-
+        
+        if (other.transform.tag == "goldItem")
+        {
+            Debug.Log("gold hit");
+            Destroy(other.gameObject);
+            GetComponent<PlayerStats>().ChangeGold(5);
+        }
+        if (other.transform.tag == "healthItem")
+        {
+            Debug.Log("health hit");
+            Destroy(other.gameObject);
+            GetComponent<PlayerStats>().ChangeHealth(10);
+        }
     }
 }

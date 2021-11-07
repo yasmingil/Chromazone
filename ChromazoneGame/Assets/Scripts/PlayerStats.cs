@@ -27,21 +27,9 @@ public class PlayerStats : MonoBehaviour
         health += healthChange;
     }
 
-    //pick up gold
-    private void OnCollisionEnter2D(Collision2D c)
+    public void ChangeGold(int goldChange)
     {
-        if(c.gameObject.tag == "gold")
-        {
-            Debug.Log("hit gold");
-
-            goldAmt += goldValue;
-            Debug.Log(goldAmt);
-
-        }
-    }
-    public void SpendGold(int gold)
-    {
-        goldAmt -= gold;
+        goldAmt += goldChange;
     }
 
 }
