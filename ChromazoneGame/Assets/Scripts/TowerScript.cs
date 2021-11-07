@@ -14,8 +14,8 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private float bulletCooldown;
     [SerializeField] private int damage;
     [SerializeField] private float bulletSpeed;
-    [SerializeField] private GameObject smallBullet;
-    [SerializeField] private GameObject bigBullet;
+    [SerializeField] private GameObject Bullet;
+
     [SerializeField] private int bounces;
     private float counter = 0f;
 
@@ -84,7 +84,7 @@ public class TowerScript : MonoBehaviour
         else if (towertype == ShotType.SINGLE)
         {
             counter = 0;
-            GameObject spawnBullet = Instantiate(smallBullet, transform.position, Quaternion.identity);
+            GameObject spawnBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
             spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
             spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
             spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
@@ -93,7 +93,7 @@ public class TowerScript : MonoBehaviour
         else 
         {
             counter = 0;
-            GameObject spawnBullet = Instantiate(bigBullet, transform.position, Quaternion.identity);
+            GameObject spawnBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
             spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
             spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
             spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4214848630103635324
+--- !u!1001 &555582361297269747
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,35 +9,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 572945056595977065, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_Name
-      value: pistol Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
-      propertyPath: range
-      value: 3
+      value: SMG Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 7473749547532530190, guid: 6f62757c572f19f43aafdebf509f91e7, type: 3}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: towertype
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2038507216295025751, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
-      propertyPath: m_Name
-      value: cannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 6719910076140599606, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11546254
+    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: bulletCooldown
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6719910076140599606, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6719910076140599606, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
-      propertyPath: m_Color.r
-      value: 0
+      value: 0.8905501
       objectReference: {fileID: 0}
     - target: {fileID: 8369599513169125447, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_RootOrder
@@ -45,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369599513169125447, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4658546
+      value: 4.29
       objectReference: {fileID: 0}
     - target: {fileID: 8369599513169125447, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.232038
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 8369599513169125447, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_LocalPosition.z

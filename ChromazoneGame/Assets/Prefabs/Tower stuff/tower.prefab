@@ -282,8 +282,7 @@ MonoBehaviour:
   bulletCooldown: 1
   damage: 50
   bulletSpeed: 10
-  smallBullet: {fileID: 7473749547532530190, guid: 6f62757c572f19f43aafdebf509f91e7, type: 3}
-  bigBullet: {fileID: 2726200287339215163, guid: d77dfbb6631b1044b9ade2ac549dc5ea, type: 3}
+  Bullet: {fileID: 0}
   bounces: 0
   towertype: 0
 --- !u!50 &2603232049782513713
