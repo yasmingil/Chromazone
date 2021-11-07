@@ -14,17 +14,27 @@ public class TowerScript : MonoBehaviour
     [SerializeField] private float bulletCooldown;
     [SerializeField] private int damage;
     [SerializeField] private float bulletSpeed;
-    [SerializeField] private enum shotType { SPREAD, SINGLE };
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject smallBullet;
+    [SerializeField] private GameObject bigBullet;
     private float counter = 0f;
-    // Start is called before the first frame update
+
+    private enum ShotType { SPREAD, SINGLE };
+    [SerializeField] private ShotType towertype;
+    private bool pierce;
     void Start()
     {
-
-
-
-
         Health = maxHealth;
+
+        //see if the bullet pierces or not
+        if(towertype == ShotType.SPREAD)
+        {
+            pierce = true;
+        }
+        else
+        {
+            pierce = false;
+        }
+
 
         //set size of range and tower hp indicator
         GetComponentsInChildren<Transform>()[1].localScale *= range;
@@ -57,9 +67,7 @@ public class TowerScript : MonoBehaviour
 
         //make circle more transparent based on health
         Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
-        Debug.Log(temp + " " + Health + " " + maxHealth);
         temp.a = (float)Health / (float)maxHealth;
-        Debug.Log(temp + " " + Health + " " + maxHealth);
         GetComponentsInChildren<SpriteRenderer>()[1].color = temp;
 
         //make towerhealthindi be proportional to health
@@ -68,19 +76,29 @@ public class TowerScript : MonoBehaviour
         HPBar.GetComponent<Image>().fillAmount = Health / maxHealth;
 
         //set the bullet speed and damage
-        if (counter <= bulletCooldown || closestEnemy==null)
+        if (counter <= bulletCooldown || closestEnemy == null)
         {
             counter += Time.deltaTime;
         }
-        else
+        else if (towertype == ShotType.SINGLE)
         {
             counter = 0;
-            GameObject spawnBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            GameObject spawnBullet = Instantiate(smallBullet, transform.position, Quaternion.identity);
             spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
             spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
             spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
+            spawnBullet.GetComponent<towerBulletScript>().SetPierce(pierce);
         }
-
+        else 
+        {
+            counter = 0;
+            GameObject spawnBullet = Instantiate(bigBullet, transform.position, Quaternion.identity);
+            spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
+            spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
+            spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
+            spawnBullet.GetComponent<towerBulletScript>().SetPierce(pierce);
+        }
+        
        
     }
 

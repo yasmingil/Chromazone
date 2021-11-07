@@ -10,6 +10,7 @@ public class towerBulletScript : MonoBehaviour
     private float bulletSpeed;
     private GameObject target = null;
     private float rotateSpeed = 1000f;
+    private bool pierce;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -56,7 +57,11 @@ public class towerBulletScript : MonoBehaviour
         }
         else if (collision.tag == "Border")
         {
-            Destroy(gameObject);
+            if (!pierce)
+            {
+                Destroy(gameObject);
+            }
+
         }
     }
 
@@ -74,5 +79,10 @@ public class towerBulletScript : MonoBehaviour
     public void SetTarget(GameObject e)
     {
         target = e;
+    }
+
+    public void SetPierce(bool p)
+    {
+        pierce = p;
     }
 }
