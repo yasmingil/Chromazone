@@ -144,19 +144,20 @@ public class PlayerController : MonoBehaviour
                 float closestDist = float.MaxValue;
                 foreach (var t in towers)
                 {
-                    float distToTower = Vector3.Distance(t.transform.position, transform.position);
+                    float distToTower = Vector3.Distance(t.transform.position, placePosition);
                     if (distToTower <= closestDist)
                     {
                         closestDist = distToTower;
                     }
                 }
                 Debug.Log(closestDist);
-                if (closestDist <= towers[0].GetComponent<TowerScript>().GetRadius())
+                if (closestDist <= towers[0].GetComponent<TowerScript>().GetRadius() && GetComponent<PlayerStats>().GetGoldAmt() >= -2) 
                 {
                     Instantiate(tower, placePosition, Quaternion.identity);
                     currentState = playerState.SHOOTING;
                     placementUI.enabled = false;
                     radiusUI.enabled = false;
+                    GetComponent<PlayerStats>().ChangeGold(-5);
                 }
             }
             

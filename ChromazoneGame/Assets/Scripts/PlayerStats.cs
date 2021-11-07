@@ -32,4 +32,9 @@ public class PlayerStats : MonoBehaviour
         goldAmt += goldChange;
     }
 
+    public int GetGoldAmt()
+    {
+        return goldAmt;
+    }
+
 }
