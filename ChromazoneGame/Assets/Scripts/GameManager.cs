@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     {
         currentWaveIndex = 0;
         currentWave = waves[currentWaveIndex];
+
+        StartCoroutine(UpdateFillPercent());
     }
 
     void Update()
@@ -41,8 +43,6 @@ public class GameManager : MonoBehaviour
 
         CheckSpawning();
         CheckWaveChange();
-
-        UpdateFillPercent();
     }
 
     private void CheckSpawning()
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
         }
 
         percentCovered = numRaysHit / 100;
-        percentDisplay.text = percentCovered.ToString();
+        percentDisplay.text = percentCovered.ToString() + "%";
     }
 
     public float GetCurrentEnemiesPerSecond()
