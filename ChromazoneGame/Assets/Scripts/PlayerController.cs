@@ -164,14 +164,18 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "goldItem")
+        
+        
+        if (other.transform.tag == "goldItem")
         {
-            Destroy(other);
+            Debug.Log("gold hit");
+            Destroy(other.gameObject);
             GetComponent<PlayerStats>().ChangeGold(5);
         }
-        else if (other.tag == "healthItem")
+        if (other.transform.tag == "healthItem")
         {
-            Destroy(other);
+            Debug.Log("health hit");
+            Destroy(other.gameObject);
             GetComponent<PlayerStats>().ChangeHealth(10);
         }
     }
