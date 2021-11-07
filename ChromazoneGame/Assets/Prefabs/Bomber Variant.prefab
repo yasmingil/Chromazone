@@ -16,8 +16,24 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: goldDropRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: playerDamage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: goldDropValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: healthDropRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: healthDropValue
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522898, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: m_Sprite
@@ -81,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522903, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: m_Name
-      value: Bomber
+      value: Bomber Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522908, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

@@ -84,12 +84,12 @@ public class EnemyParent : MonoBehaviour
             //drops healthItem of healthDrop value
             int chanceHealth = Random.Range(1,100);
             int chanceGold = Random.Range(1,100);
-            if(chanceHealth >= healthDropRate)
+            if(chanceHealth <= healthDropRate)
             {
                 GameObject spawnHealthItem = Instantiate(healthItem, transform.position, Quaternion.identity);
             }
             
-            else if(chanceGold >= goldDropRate)
+            else if(chanceGold <= goldDropRate)
             {
                 GameObject spawnHealthItem = Instantiate(goldItem, transform.position, Quaternion.identity);
             }
