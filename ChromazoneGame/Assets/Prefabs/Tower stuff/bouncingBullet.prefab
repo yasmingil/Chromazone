@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!58 &1826880054433318860
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459980160370611997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997
 --- !u!1 &8222575950388472808
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,12 +196,16 @@ PrefabInstance:
       value: bouncingBullet
       objectReference: {fileID: 0}
     - target: {fileID: 572945056595977065, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572945056595977065, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: range
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: Bullet
@@ -202,6 +222,10 @@ PrefabInstance:
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: bulletCooldown
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061702032475927508, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2061702032475927508, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_IsActive
@@ -285,5 +309,10 @@ PrefabInstance:
 --- !u!4 &3538735019275175054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8369599513169125447, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+  m_PrefabInstance: {fileID: 4988535560828855497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6459980160370611997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2061702032475927508, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
   m_PrefabInstance: {fileID: 4988535560828855497}
   m_PrefabAsset: {fileID: 0}

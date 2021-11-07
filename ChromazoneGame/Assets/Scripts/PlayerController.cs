@@ -182,6 +182,8 @@ public class PlayerController : MonoBehaviour
                 if (closestDist <= towers[0].GetComponent<TowerScript>().GetRadius() && GetComponent<PlayerStats>().GetGoldAmt() >= tower.GetComponent<TowerScript>().GetCost()) 
                 {
                     Instantiate(tower, placePosition, Quaternion.identity);
+                    GameObject.FindObjectOfType<AudioManager>().AddTowerLayer();
+                    // StartCoroutine(GameObject.FindObjectOfType<GameManager>().UpdateFillPercent());
                     currentState = playerState.SHOOTING;
                     placementUI.enabled = false;
                     radiusUI.enabled = false;
@@ -190,8 +192,6 @@ public class PlayerController : MonoBehaviour
             }
             
         }
-
-        GameObject.FindObjectOfType<AudioManager>().AddTowerLayer();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

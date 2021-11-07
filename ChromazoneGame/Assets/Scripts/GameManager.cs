@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gunnerPrefab;
     [SerializeField] private Transform playArea;
     [SerializeField] private LayerMask turretRangeLayerMask;
-    [SerializeField] private TMP_Text percentDisplay;
+    [SerializeField] private TMP_Text waveDisplay;
 
     [SerializeField] private List<Wave> waves;
 
@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     {
         currentWaveIndex = 0;
         currentWave = waves[currentWaveIndex];
+
+        // StartCoroutine(UpdateFillPercent());
     }
 
     void Update()
@@ -41,8 +43,6 @@ public class GameManager : MonoBehaviour
 
         CheckSpawning();
         CheckWaveChange();
-
-        UpdateFillPercent();
     }
 
     private void CheckSpawning()
@@ -72,10 +72,11 @@ public class GameManager : MonoBehaviour
                 currentWave = waves[currentWaveIndex];
             }
             waveTimer = 0;
+            waveDisplay.text = "Wave: " + (currentWaveIndex + 1);
         }
     }
 
-    private IEnumerator UpdateFillPercent()
+    public IEnumerator UpdateFillPercent()
     {
         int numRaysHit = 0;
 
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour
             {
                 float rayStartX = ((playArea.localScale.x / 100) * j) - ((playArea.localScale.x / 2) - playArea.position.x);
                 Vector3 rayStartPos = new Vector3(rayStartX, rayStartY, -.5f);
-                if (Physics.Raycast(rayStartPos, Vector3.forward, 1f, turretRangeLayerMask))
+                if (Physics.Raycast(rayStartPos, Vector3.forward, 1f, turretRangeLayerMask, QueryTriggerInteraction.Collide))
                 {
                     numRaysHit++;
                 }
@@ -95,7 +96,8 @@ public class GameManager : MonoBehaviour
         }
 
         percentCovered = numRaysHit / 100;
-        percentDisplay.text = percentCovered.ToString();
+        Debug.Log(percentCovered);
+        //percentDisplay.text = percentCovered.ToString();
     }
 
     public float GetCurrentEnemiesPerSecond()

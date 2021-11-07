@@ -194,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8369599513169125447
 Transform:
   m_ObjectHideFlags: 0
@@ -276,14 +276,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   cost: 50
-  range: 3
+  range: 8
   towerColor: {r: 1, g: 1, b: 1, a: 0}
   bulletCooldown: 1
   damage: 50
   bulletSpeed: 10
   Bullet: {fileID: 0}
   bounces: 0
-  towertype: 0
+  towertype: 1
 --- !u!50 &2603232049782513713
 Rigidbody2D:
   serializedVersion: 4
@@ -403,7 +403,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 0.2913136, g: 0.8848047, b: 0.9245283, a: 1}
+  m_Color: {r: 0.2913136, g: 0.8848047, b: 0.9245283, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
