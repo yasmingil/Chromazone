@@ -14,16 +14,15 @@ public class AudioManager : MonoBehaviour
     private float startingTowerVolume;
     private float startingIntensityVolume;
 
-    //TODO finish implementing tower intensity
-
     private void Start()
     {
-        /*startingTowerVolume = towerSources[0].volume;
+        startingTowerVolume = towerSources[0].volume;
+        startingIntensityVolume = intensitySource.volume;
 
         foreach (AudioSource s in towerSources)
         {
             s.volume = 0;
-        }*/
+        }
     }
 
     private void Update()
@@ -37,7 +36,7 @@ public class AudioManager : MonoBehaviour
 
         if (numTowers <= towerSources.Count)
         {
-            StartCoroutine(FadeIn(towerSources[numTowers], fadeTime));
+            StartCoroutine(FadeIn(towerSources[numTowers], fadeTime, startingTowerVolume));
         }
     }
 
@@ -45,7 +44,7 @@ public class AudioManager : MonoBehaviour
     {
         if (numTowers <= towerSources.Count)
         {
-            StartCoroutine(FadeOut(towerSources[numTowers], fadeTime));
+            StartCoroutine(FadeOut(towerSources[numTowers], fadeTime, startingTowerVolume));
         }
 
         numTowers--;
@@ -53,30 +52,33 @@ public class AudioManager : MonoBehaviour
 
     private void UpdateIntensityTrack()
     {
+        float enemiesPerSecondRange = maxEnemiesPerSecond - minEnemiesPerSecond;
+        float enemiesPerSecondPercent = (GameObject.FindObjectOfType<GameManager>().GetCurrentEnemiesPerSecond() - minEnemiesPerSecond) / enemiesPerSecondRange;
 
+        intensitySource.volume = startingIntensityVolume * enemiesPerSecondPercent;
     }
 
-    private IEnumerator FadeIn(AudioSource source, float time)
+    private IEnumerator FadeIn(AudioSource source, float time, float workingVolume)
     {
         bool finished = false;
         while (!finished)
         {
-            source.volume += startingTowerVolume * 0.01f * (1 / time);
-            if (source.volume >= startingTowerVolume)
+            source.volume += workingVolume * 0.01f * (1 / time);
+            if (source.volume >= workingVolume)
             {
-                source.volume = startingTowerVolume;
+                source.volume = workingVolume;
                 finished = true;
             }
             yield return new WaitForSeconds(0.01f);
         }
     }
 
-    private IEnumerator FadeOut(AudioSource source, float time)
+    private IEnumerator FadeOut(AudioSource source, float time, float workingVolume)
     {
         bool finished = false;
         while (!finished)
         {
-            source.volume -= startingTowerVolume * 0.01f * (1 / time);
+            source.volume -= workingVolume * 0.01f * (1 / time);
             if (source.volume <= 0)
             {
                 source.volume = 0;
