@@ -54,6 +54,19 @@ public class TowerScript : MonoBehaviour
                 }
             }
         }
+
+        //make circle more transparent based on health
+        Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
+        Debug.Log(temp + " " + Health + " " + maxHealth);
+        temp.a = (float)Health / (float)maxHealth;
+        Debug.Log(temp + " " + Health + " " + maxHealth);
+        GetComponentsInChildren<SpriteRenderer>()[1].color = temp;
+
+        //make towerhealthindi be proportional to health
+        GameObject canvas = gameObject.transform.GetChild(1).gameObject;
+        GameObject HPBar = canvas.transform.GetChild(0).gameObject;
+        HPBar.GetComponent<Image>().fillAmount = Health / maxHealth;
+
         //set the bullet speed and damage
         if (counter <= bulletCooldown || closestEnemy==null)
         {
@@ -68,23 +81,16 @@ public class TowerScript : MonoBehaviour
             spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
         }
 
-        //make circle more transparent based on health
-        Color temp = GetComponentsInChildren<SpriteRenderer>()[1].color;
-        temp.a = (float)Health/(float)maxHealth;
-        GetComponentsInChildren<SpriteRenderer>()[1].color = temp;
-        //make towerhealthindi be proportional to health
-
-        GameObject canvas = gameObject.transform.GetChild(1).gameObject;
-        GameObject HPBar = canvas.transform.GetChild(0).gameObject;
-        HPBar.GetComponent<Image>().fillAmount = Health/maxHealth;
-
+       
     }
 
     public void TakeDamage(int d)
     {
         Health -= d;
+        Debug.Log("take dmg " + Health);
         if (Health <= 0)
         {
+            Debug.Log("die");
             Destroy(gameObject);
         }
     }
