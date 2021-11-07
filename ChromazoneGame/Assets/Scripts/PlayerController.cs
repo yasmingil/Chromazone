@@ -151,13 +151,13 @@ public class PlayerController : MonoBehaviour
                     }
                 }
                 Debug.Log(closestDist);
-                if (closestDist <= towers[0].GetComponent<TowerScript>().GetRadius() && GetComponent<PlayerStats>().GetGoldAmt() >= -2) 
+                if (closestDist <= towers[0].GetComponent<TowerScript>().GetRadius() && GetComponent<PlayerStats>().GetGoldAmt() >= tower.GetComponent<TowerScript>().GetCost()) 
                 {
                     Instantiate(tower, placePosition, Quaternion.identity);
                     currentState = playerState.SHOOTING;
                     placementUI.enabled = false;
                     radiusUI.enabled = false;
-                    GetComponent<PlayerStats>().ChangeGold(-5);
+                    GetComponent<PlayerStats>().ChangeGold(tower.GetComponent<TowerScript>().GetCost());
                 }
             }
             
