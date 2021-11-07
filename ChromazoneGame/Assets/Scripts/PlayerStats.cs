@@ -8,11 +8,11 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int goldAmt;
     [SerializeField] private int goldValue = 20;
 
-
+    GameObject gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager");
     }
 
     // Update is called once per frame
@@ -25,6 +25,11 @@ public class PlayerStats : MonoBehaviour
     public void ChangeHealth(int healthChange)
     {
         health += healthChange;
+        if(health<=0)
+        {
+            gameManager.GetComponent<GameManager>().LoseGame();
+        }
+
     }
 
     public void ChangeGold(int goldChange)

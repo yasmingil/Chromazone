@@ -99,4 +99,8 @@ public class GameManager : MonoBehaviour
     {
         return currentWave.enemiesPerSecond;
     }
+    public void LoseGame()
+    {
+
+    }
 }
