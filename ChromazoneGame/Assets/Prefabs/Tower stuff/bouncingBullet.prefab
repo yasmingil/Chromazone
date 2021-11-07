@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: bulletSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: bulletCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2061702032475927508, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -221,11 +225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369599513169125447, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.018868
+      value: 7.03801
       objectReference: {fileID: 0}
     - target: {fileID: 8369599513169125447, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1843575
+      value: -0.24946375
       objectReference: {fileID: 0}
     - target: {fileID: 8369599513169125447, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_LocalPosition.z
