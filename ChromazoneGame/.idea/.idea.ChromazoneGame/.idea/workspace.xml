@@ -20,9 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b19e2e03-a9a3-4ae4-809e-48e76f1a7d96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChromazoneGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TowerBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TowerBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/tower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyParent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyParent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TowerRangeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TowerRangeScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TowerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TowerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/towerBulletScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/towerBulletScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/NathanScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/NathanScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/YusanScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/YusanScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636178351453</updated>
       <workItem from="1636178368383" duration="6352000" />
-      <workItem from="1636228695264" duration="9720000" />
+      <workItem from="1636228695264" duration="10126000" />
     </task>
     <servers />
   </component>
