@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private int health = 100;
+    [SerializeField] private int maxHealth = 100;
+    private int health;
     [SerializeField] private int goldAmt;
-    [SerializeField] private int goldValue = 20;
-
+    [SerializeField] private TMP_Text goldCount;
+    [SerializeField] private Image healthBar;
     GameObject gameManager;
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -25,6 +29,7 @@ public class PlayerStats : MonoBehaviour
     public void ChangeHealth(int healthChange)
     {
         health += healthChange;
+        UpdateHealthBar();
         if(health<=0)
         {
             gameManager.GetComponent<GameManager>().LoseGame();
@@ -32,11 +37,16 @@ public class PlayerStats : MonoBehaviour
 
     }
 
+    private void UpdateHealthBar()
+    {
+        healthBar.fillAmount = (float)health/(float)maxHealth;
+    }
     public void ChangeGold(int goldChange)
     {
         goldAmt += goldChange;
+        goldCount.text = goldAmt.ToString();
     }
-
+    
     public int GetGoldAmt()
     {
         return goldAmt;
