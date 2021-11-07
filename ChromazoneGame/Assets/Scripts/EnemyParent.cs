@@ -46,7 +46,8 @@ public class EnemyParent : MonoBehaviour
         }
         Vector3 ownerToMinTarget = (minTower.transform.position - transform.position);
         ownerToMinTarget.Normalize();
-        transform.position += ownerToMinTarget * speed * Time.deltaTime;
+        transform.position += ownerToMinTarget * (speed * Time.deltaTime);
+        transform.up = -ownerToMinTarget * (speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D c)

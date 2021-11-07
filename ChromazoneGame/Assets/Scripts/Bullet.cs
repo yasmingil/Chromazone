@@ -24,7 +24,6 @@ public class Bullet : MonoBehaviour
         if (collision.transform.tag == "Boundary")
         {
             Destroy(gameObject);
-            Debug.Log("Destroy bullet");
         }
         if(isEnemy == true)
         {
