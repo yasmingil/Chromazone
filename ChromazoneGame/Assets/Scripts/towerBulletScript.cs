@@ -78,7 +78,7 @@ public class towerBulletScript : MonoBehaviour
 
 
         }
-        else if (collision.tag == "Border")
+        else if (collision.CompareTag("Boundary"))
         {
             Destroy(gameObject);
 
