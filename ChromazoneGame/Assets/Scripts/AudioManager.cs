@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour
     private float startingTowerVolume;
     private float startingIntensityVolume;
 
+    //TODO finish implementing tower intensity
+
     private void Start()
     {
         startingTowerVolume = towerSources[0].volume;
