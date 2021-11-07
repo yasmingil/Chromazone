@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (currentState == playerState.PLACING)
         {
+
             PlaceTower(currentSelectedTower);
         }
     }
