@@ -81,18 +81,20 @@ public class TowerScript : MonoBehaviour
         {
             counter += Time.deltaTime;
         }
-        else if (towertype == ShotType.SINGLE)
+        else
         {
+
             counter = 0;
-            GameObject spawnBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
-            spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
-            spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
-            spawnBullet.GetComponent<towerBulletScript>().SetTarget(closestEnemy);
-            spawnBullet.GetComponent<towerBulletScript>().SetPierce(pierce);
-        }
-        else 
-        {
-            counter = 0;
+
+            /*
+            float angle = Vector3.Angle(transform.position, closestEnemy.transform.position);
+            GameObject gun = canvas.transform.GetChild(2).gameObject;
+            Vector3 guntemp = gun.transform.localEulerAngles;
+            guntemp.z = guntemp.z + angle;
+            gun.transform.localEulerAngles = guntemp; */
+
+
+
             GameObject spawnBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
             spawnBullet.GetComponent<towerBulletScript>().SetDamage(damage);
             spawnBullet.GetComponent<towerBulletScript>().SetBulletSpeed(bulletSpeed);
