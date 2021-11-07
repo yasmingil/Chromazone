@@ -11,6 +11,7 @@ public class MainMenuButtons : MonoBehaviour
     void Start()
     {
         MainMenuButton();
+
     }
 
     public void PlayNowButton()
@@ -24,6 +25,12 @@ public class MainMenuButtons : MonoBehaviour
         // Show Credits Menu
         MainMenu.SetActive(false);
         CreditsMenu.SetActive(true);
+    }
+    public void BackButton()
+    {
+        // Show Credits Menu
+        MainMenu.SetActive(true);
+        CreditsMenu.SetActive(false);
     }
 
     public void MainMenuButton()
