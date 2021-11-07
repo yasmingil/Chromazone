@@ -39,7 +39,7 @@ public class PlayerStats : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar.fillAmount = (float)health/(float)maxHealth;
+        healthBar.GetComponent<Image>().fillAmount = (float)health/(float)maxHealth;
     }
     public void ChangeGold(int goldChange)
     {
