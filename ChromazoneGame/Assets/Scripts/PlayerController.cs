@@ -190,6 +190,8 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+
+        GameObject.FindObjectOfType<AudioManager>().AddTowerLayer();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

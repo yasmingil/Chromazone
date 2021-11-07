@@ -94,6 +94,7 @@ public class EnemyParent : MonoBehaviour
                 GameObject spawnHealthItem = Instantiate(goldItem, transform.position, Quaternion.identity);
             }
             Destroy(gameObject);
+            GameObject.FindObjectOfType<AudioManager>().EnemyDie();
         }
     }
 

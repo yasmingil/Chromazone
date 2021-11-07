@@ -18,7 +18,8 @@ public class AudioManager : MonoBehaviour
     private float startingIntensityVolume;
 
     [Header("SFX")]
-    [SerializeField] private AudioSource effectSource;
+    [SerializeField] private AudioSource enemyEffectSource;
+    [SerializeField] private AudioClip enemyDieSound;
 
     private void Start()
     {
@@ -40,9 +41,9 @@ public class AudioManager : MonoBehaviour
     {
         numTowers++;
 
-        if (numTowers <= towerSources.Count)
+        if (numTowers < towerSources.Count)
         {
-            StartCoroutine(FadeIn(towerSources[numTowers], fadeTime, startingTowerVolume));
+            StartCoroutine(FadeIn(towerSources[numTowers - 1], fadeTime, startingTowerVolume));
         }
     }
 
@@ -73,6 +74,11 @@ public class AudioManager : MonoBehaviour
         {
             StartCoroutine(FadeDie(s));
         }
+    }
+
+    public void EnemyDie()
+    {
+        enemyEffectSource.PlayOneShot(enemyDieSound);
     }
 
     private IEnumerator FadeIn(AudioSource source, float time, float workingVolume)

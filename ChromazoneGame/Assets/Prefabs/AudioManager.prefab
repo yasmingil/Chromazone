@@ -829,7 +829,8 @@ MonoBehaviour:
   minEnemiesPerSecond: 0
   maxEnemiesPerSecond: 5
   fadeDieTime: 0.5
-  effectSource: {fileID: 0}
+  enemyEffectSource: {fileID: 5721772385392762106}
+  enemyDieSound: {fileID: 8300000, guid: 2dccd3fc6d600dc48b42bf5744efd27b, type: 3}
 --- !u!1 &5721772385392762084
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +842,7 @@ GameObject:
   - component: {fileID: 5721772385392762085}
   - component: {fileID: 5721772385392762106}
   m_Layer: 0
-  m_Name: EffectSource
+  m_Name: EnemySource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

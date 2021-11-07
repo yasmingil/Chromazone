@@ -853,6 +853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5721772385392762106, guid: 604cf3c574c6a424482cd1b838bc5ec4, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 604cf3c574c6a424482cd1b838bc5ec4, type: 3}
 --- !u!1 &1183362050
@@ -1269,7 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  goldAmt: 100
+  goldAmt: 10000
   goldValue: 20
 --- !u!1001 &1374243381
 PrefabInstance:
