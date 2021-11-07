@@ -183,6 +183,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: CORE
       objectReference: {fileID: 0}
+    - target: {fileID: 7147343199955569995, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Size.x
+      value: 1.9320316
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343199955569995, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9925203
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343199955569995, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.05040741
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343199955569995, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.00000011920929
+      objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: range
       value: 6
