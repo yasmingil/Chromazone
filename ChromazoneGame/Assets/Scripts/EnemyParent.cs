@@ -63,9 +63,18 @@ public class EnemyParent : MonoBehaviour
             Debug.Log("Player bomb damage");
             c.gameObject.GetComponent<PlayerStats>().ChangeHealth(playerDamage);
         }
+        
+    }
+
+    public void ChangeHealth(int healthChange)
+    {
+        health += healthChange;
+        //if(health == 0f)
         //JUST TO TEST: if collide with player bullet, drop items
-        if (c.gameObject.tag == "PlayerBullet")
+        if (health <= 0)
         {
+            Debug.Log("Enemy Killed, may drop shit");
+            
             //drops healthItem of healthDrop value
             int chanceHealth = Random.Range(1,100);
             int chanceGold = Random.Range(1,100);
@@ -78,14 +87,8 @@ public class EnemyParent : MonoBehaviour
             {
                 GameObject spawnHealthItem = Instantiate(goldItem, transform.position, Quaternion.identity);
             }
+            Destroy(gameObject);
         }
-    }
-
-    public void ChangeHealth(int healthChange)
-    {
-        health += healthChange;
-        //if(health == 0f)
-        
     }
 
 }
