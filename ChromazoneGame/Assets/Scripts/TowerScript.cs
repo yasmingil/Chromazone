@@ -74,7 +74,7 @@ public class TowerScript : MonoBehaviour
         GetComponentsInChildren<SpriteRenderer>()[1].color = temp;
         //make towerhealthindi be proportional to health
 
-        GetComponentInChildren<Image>().fillAmount = (float)Health*0.5f / (float)maxHealth;
+        GetComponentsInChildren<Image>()[1].fillAmount = 0.5f;
 
     }
 
