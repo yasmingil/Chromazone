@@ -307,6 +307,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 110801488, guid: d89ee3d5482a53442afde8397679f3ad, type: 3}
+      propertyPath: bulletDamage
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7932660817074446921, guid: d89ee3d5482a53442afde8397679f3ad, type: 3}
       propertyPath: m_Name
       value: Player
@@ -379,6 +383,10 @@ PrefabInstance:
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: speed
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: health
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: goldDrop
