@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af853dc2b76194fe9a98ebf158c0b0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 10
   bulletSpeed: 10
-  bulletCooldown: 2
+  bulletCooldown: 1
   bullet: {fileID: 5071316852233235431, guid: 2302eab2de7a7bc47beda0d2ac2dedd1, type: 3}
 --- !u!1001 &793192481399597802
 PrefabInstance:
@@ -24,8 +24,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: towerDamage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: goldDropRate
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
+      propertyPath: playerDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: goldDropValue
