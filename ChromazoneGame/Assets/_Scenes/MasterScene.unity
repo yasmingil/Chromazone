@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  goldAmt: 10000
+  goldAmt: 0
   goldCount: {fileID: 1863757712}
   healthBar: {fileID: 1863757711}
 --- !u!1001 &1374243381
