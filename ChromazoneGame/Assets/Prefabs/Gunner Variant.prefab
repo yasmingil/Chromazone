@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: goldDropValue
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: healthDropRate
