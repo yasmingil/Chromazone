@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoseGame()
     {
+        Time.timeScale = 0;
         loseGameUI.SetActive(true);
     }
 
