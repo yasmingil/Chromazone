@@ -30,6 +30,10 @@ public class PlayerStats : MonoBehaviour
     public void ChangeHealth(int healthChange)
     {
         health += healthChange;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
         UpdateHealthBar();
         if(health<=0)
         {
@@ -40,7 +44,7 @@ public class PlayerStats : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar.GetComponent<Image>().fillAmount = (float)health/(float)maxHealth;
+        healthBar.fillAmount = (float)health/(float)maxHealth;
     }
     public void ChangeGold(int goldChange)
     {
