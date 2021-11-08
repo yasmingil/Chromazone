@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject tower2;
     [SerializeField] private GameObject tower3;
     private GameObject currentSelectedTower;
-    private Color placementColor;
     [SerializeField] private float placementRadius;
     [SerializeField] private Image radiusUI1;
     [SerializeField] private Image radiusUI2;
@@ -61,7 +60,6 @@ public class PlayerController : MonoBehaviour
             currentSelectedTower = tower1;
             if (currentState == playerState.PLACING)
             {
-                placementColor = new Color(254, 166, 0, 1);
                 currentState = playerState.SHOOTING;
                 radiusUI1.enabled = false;
                 radiusUI2.enabled = false;
@@ -72,13 +70,11 @@ public class PlayerController : MonoBehaviour
             {
                 radiusUI1.enabled = true;
                 placementUI.enabled = true;
-                radiusUI1.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            placementColor = new Color(121, 221, 254, 1);
             currentSelectedTower = tower2;
             if (currentState == playerState.PLACING)
             {
@@ -92,7 +88,6 @@ public class PlayerController : MonoBehaviour
             {
                 radiusUI2.enabled = true;
                 placementUI.enabled = true;
-                radiusUI2.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }
@@ -111,7 +106,6 @@ public class PlayerController : MonoBehaviour
             {
                 radiusUI3.enabled = true;
                 placementUI.enabled = true;
-                radiusUI3.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }
