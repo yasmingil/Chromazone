@@ -115,6 +115,8 @@ public class GameManager : MonoBehaviour
             Destroy(enemy.gameObject);
         }
         loseGameUI.SetActive(true);
+
+        GameObject.FindObjectOfType<AudioManager>().PlayerDie();
     }
 
     public void ResetGame()
