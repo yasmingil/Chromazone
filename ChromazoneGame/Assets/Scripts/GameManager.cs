@@ -110,6 +110,10 @@ public class GameManager : MonoBehaviour
     public void LoseGame()
     {
         Time.timeScale = 0;
+        foreach (EnemyParent enemy in GameObject.FindObjectsOfType<EnemyParent>())
+        {
+            Destroy(enemy.gameObject);
+        }
         loseGameUI.SetActive(true);
     }
 
