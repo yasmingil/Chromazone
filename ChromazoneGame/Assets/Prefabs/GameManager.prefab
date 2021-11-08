@@ -50,11 +50,42 @@ MonoBehaviour:
   turretRangeLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  percentDisplay: {fileID: 0}
+  waveDisplay: {fileID: 0}
+  loseGameUI: {fileID: 0}
   waves:
-  - timeInSeconds: 100
+  - timeInSeconds: 20
+    enemiesPerSecond: 1
+    percentEnemiesGunners: 10
+  - timeInSeconds: 20
+    enemiesPerSecond: 1.5
+    percentEnemiesGunners: 15
+  - timeInSeconds: 20
     enemiesPerSecond: 2
-    percentEnemiesGunners: 13
+    percentEnemiesGunners: 20
+  - timeInSeconds: 20
+    enemiesPerSecond: 2.5
+    percentEnemiesGunners: 25
+  - timeInSeconds: 20
+    enemiesPerSecond: 3
+    percentEnemiesGunners: 30
+  - timeInSeconds: 20
+    enemiesPerSecond: 3.5
+    percentEnemiesGunners: 35
+  - timeInSeconds: 20
+    enemiesPerSecond: 4
+    percentEnemiesGunners: 40
+  - timeInSeconds: 20
+    enemiesPerSecond: 4.5
+    percentEnemiesGunners: 45
+  - timeInSeconds: 20
+    enemiesPerSecond: 5
+    percentEnemiesGunners: 50
+  - timeInSeconds: 20
+    enemiesPerSecond: 5.5
+    percentEnemiesGunners: 55
+  - timeInSeconds: 20
+    enemiesPerSecond: 6
+    percentEnemiesGunners: 60
 --- !u!114 &5693703433033217265
 MonoBehaviour:
   m_ObjectHideFlags: 0

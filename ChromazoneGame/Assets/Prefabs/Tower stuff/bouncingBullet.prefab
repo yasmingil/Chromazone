@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 34601754612188626, guid: e6f15322da7460a478e822fc91a3d660, type: 3}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: damage
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: bounces
