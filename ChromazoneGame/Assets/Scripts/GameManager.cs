@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
         CheckSpawning();
         CheckWaveChange();
+        CheckWin();
     }
 
     private void CheckSpawning()
@@ -121,7 +122,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MasterScene");
     }
 
     public void CheckWin()
@@ -129,8 +130,15 @@ public class GameManager : MonoBehaviour
         int i = 0;
         foreach(GameObject p in GameObject.FindGameObjectsWithTag("Point"))
         {
-            Debug.Log(i);
-            i++;
+            foreach(GameObject t in GameObject.FindGameObjectsWithTag("Tower"))
+            {
+
+                if(Vector3.Distance(p.transform.position, t.transform.position) <= 4)
+                {
+                    i++;
+                    continue;
+                }
+            }
         }
     }
 }
