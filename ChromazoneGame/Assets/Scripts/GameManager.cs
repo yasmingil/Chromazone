@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private float spawnTimer = 0;
     private float percentCovered;
 
+    private bool win = false;
+
     void Start()
     {
         currentWaveIndex = 0;
@@ -47,7 +49,6 @@ public class GameManager : MonoBehaviour
 
         CheckSpawning();
         CheckWaveChange();
-        CheckWin();
     }
 
     private void CheckSpawning()
@@ -122,7 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadScene("MasterScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void CheckWin()
@@ -132,13 +133,18 @@ public class GameManager : MonoBehaviour
         {
             foreach(GameObject t in GameObject.FindGameObjectsWithTag("Tower"))
             {
-
                 if(Vector3.Distance(p.transform.position, t.transform.position) <= 4)
                 {
                     i++;
-                    continue;
+                    break;
                 }
+
             }
+        }
+        if (i == 34)
+        {
+            win = true;
+            Debug.Log("WIN");
         }
     }
 }
