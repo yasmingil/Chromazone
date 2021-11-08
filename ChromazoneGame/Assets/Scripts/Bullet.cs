@@ -29,7 +29,6 @@ public class Bullet : MonoBehaviour
         {
             if (collision.transform.tag == "Player")
             {
-                Debug.Log("Bullet Hits player");
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<PlayerStats>().ChangeHealth(-BulletDamage);
             }
@@ -38,7 +37,6 @@ public class Bullet : MonoBehaviour
         {
             if(collision.transform.tag == "Enemy")
             {
-                Debug.Log("Bullet Hits enemy");
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<EnemyParent>().ChangeHealth(-BulletDamage);
             }

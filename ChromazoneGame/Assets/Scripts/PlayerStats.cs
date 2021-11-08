@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager");
         health = maxHealth;
+        ChangeGold(0);
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class PlayerStats : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar.fillAmount = (float)health/(float)maxHealth;
+        healthBar.GetComponent<Image>().fillAmount = (float)health/(float)maxHealth;
     }
     public void ChangeGold(int goldChange)
     {
