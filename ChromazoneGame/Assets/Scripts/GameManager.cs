@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadScene("MasterScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void CheckWin()
