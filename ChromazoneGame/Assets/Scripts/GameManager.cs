@@ -119,6 +119,16 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadScene("MasterScene");
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void CheckWin()
+    {
+        int i = 0;
+        foreach(GameObject p in GameObject.FindGameObjectsWithTag("Point"))
+        {
+            Debug.Log(i);
+            i++;
+        }
     }
 }
