@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 34601754612188626, guid: e6f15322da7460a478e822fc91a3d660, type: 3}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: damage
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: bounces
@@ -259,6 +259,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5399892206491315395, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a53f11e1a7be09e48a95262d15035392, type: 3}
     - target: {fileID: 5399892206491315395, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_Color.a
       value: 0.03529412

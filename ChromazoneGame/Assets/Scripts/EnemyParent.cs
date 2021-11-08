@@ -66,7 +66,7 @@ public class EnemyParent : MonoBehaviour
         {
             // bomb damage if enemy touches player?
             Debug.Log("Player bomb damage");
-            c.gameObject.GetComponent<PlayerStats>().ChangeHealth(playerDamage);
+            c.gameObject.GetComponent<PlayerStats>().ChangeHealth(-playerDamage);
             Destroy(gameObject);
         }
         
