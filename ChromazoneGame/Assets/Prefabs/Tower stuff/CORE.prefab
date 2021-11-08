@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: range
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: Bullet
