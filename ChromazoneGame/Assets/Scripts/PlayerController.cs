@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private int goldValue;
+    [SerializeField] private int healthValue;
+    
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletCooldown;
     [SerializeField] private float bulletSpeed;
@@ -201,13 +204,13 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("gold hit");
             Destroy(other.gameObject);
-            GetComponent<PlayerStats>().ChangeGold(5);
+            GetComponent<PlayerStats>().ChangeGold(goldValue);
         }
         if (other.transform.tag == "healthItem")
         {
             Debug.Log("health hit");
             Destroy(other.gameObject);
-            GetComponent<PlayerStats>().ChangeHealth(10);
+            GetComponent<PlayerStats>().ChangeHealth(healthValue);
         }
     }
 }
