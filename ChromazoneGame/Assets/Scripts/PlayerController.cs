@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject tower2;
     [SerializeField] private GameObject tower3;
     private GameObject currentSelectedTower;
+    private Color placementColor;
     [SerializeField] private float placementRadius;
     [SerializeField] private Image radiusUI;
     [SerializeField] private Image placementUI;
@@ -51,10 +52,10 @@ public class PlayerController : MonoBehaviour
         transform.up = transform.position - worldMousePosition;
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            
             currentSelectedTower = tower1;
             if (currentState == playerState.PLACING)
             {
+                placementColor = new Color(254, 166, 0);
                 currentState = playerState.SHOOTING;
                 placementUI.enabled = false;
                 radiusUI.enabled = false;
@@ -62,12 +63,15 @@ public class PlayerController : MonoBehaviour
             else
             {
                 radiusUI.enabled = true;
+                placementUI.color = placementColor;
                 placementUI.enabled = true;
+                radiusUI.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
+            placementColor = new Color(121, 221, 254);
             currentSelectedTower = tower2;
             if (currentState == playerState.PLACING)
             {
@@ -78,12 +82,15 @@ public class PlayerController : MonoBehaviour
             else
             {
                 radiusUI.enabled = true;
+                placementUI.color = placementColor;
                 placementUI.enabled = true;
+                radiusUI.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            placementColor = new Color(137, 108, 254);
             currentSelectedTower = tower3;
             if (currentState == playerState.PLACING)
             {
@@ -94,7 +101,9 @@ public class PlayerController : MonoBehaviour
             else
             {
                 radiusUI.enabled = true;
+                placementUI.color = placementColor;
                 placementUI.enabled = true;
+                radiusUI.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }

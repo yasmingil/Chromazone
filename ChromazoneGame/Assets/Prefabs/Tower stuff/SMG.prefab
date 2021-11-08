@@ -51,6 +51,18 @@ PrefabInstance:
       propertyPath: damage
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: towerColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: towerColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147343199955569997, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
+      propertyPath: towerColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7147343199955569999, guid: c5bc1fd1b0f3214469339a4d5fc3cd47, type: 3}
       propertyPath: m_RootOrder
       value: 0
