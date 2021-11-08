@@ -22,7 +22,10 @@ public class PlayerController : MonoBehaviour
     private GameObject currentSelectedTower;
     private Color placementColor;
     [SerializeField] private float placementRadius;
-    [SerializeField] private Image radiusUI;
+    [SerializeField] private Image radiusUI1;
+    [SerializeField] private Image radiusUI2;
+    [SerializeField] private Image radiusUI3;
+    
     [SerializeField] private Image placementUI;
     
     [SerializeField] private float speed;
@@ -41,8 +44,10 @@ public class PlayerController : MonoBehaviour
     void Start()    
     {
         rb = GetComponent<Rigidbody2D>();
-        radiusUI.enabled = false;
+        radiusUI1.enabled = false;
+        radiusUI2.enabled = false;
         placementUI.enabled = false;
+        radiusUI3.enabled = false;
         currentState = playerState.SHOOTING;
     }
 
@@ -56,69 +61,78 @@ public class PlayerController : MonoBehaviour
             currentSelectedTower = tower1;
             if (currentState == playerState.PLACING)
             {
-                placementColor = new Color(254, 166, 0);
+                placementColor = new Color(254, 166, 0, 1);
                 currentState = playerState.SHOOTING;
+                radiusUI1.enabled = false;
+                radiusUI2.enabled = false;
                 placementUI.enabled = false;
-                radiusUI.enabled = false;
+                radiusUI3.enabled = false;
             }
             else
             {
-                radiusUI.enabled = true;
-                placementUI.color = placementColor;
+                radiusUI1.enabled = true;
                 placementUI.enabled = true;
-                radiusUI.color = placementColor;
+                radiusUI1.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            placementColor = new Color(121, 221, 254);
+            placementColor = new Color(121, 221, 254, 1);
             currentSelectedTower = tower2;
             if (currentState == playerState.PLACING)
             {
                 currentState = playerState.SHOOTING;
+                radiusUI1.enabled = false;
+                radiusUI2.enabled = false;
                 placementUI.enabled = false;
-                radiusUI.enabled = false;
+                radiusUI3.enabled = false;
             }
             else
             {
-                radiusUI.enabled = true;
-                placementUI.color = placementColor;
+                radiusUI2.enabled = true;
                 placementUI.enabled = true;
-                radiusUI.color = placementColor;
+                radiusUI2.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            placementColor = new Color(137, 108, 254);
             currentSelectedTower = tower3;
             if (currentState == playerState.PLACING)
             {
                 currentState = playerState.SHOOTING;
+                radiusUI1.enabled = false;
+                radiusUI2.enabled = false;
                 placementUI.enabled = false;
-                radiusUI.enabled = false;
+                radiusUI3.enabled = false;
             }
             else
             {
-                radiusUI.enabled = true;
-                placementUI.color = placementColor;
+                radiusUI3.enabled = true;
                 placementUI.enabled = true;
-                radiusUI.color = placementColor;
+                radiusUI3.color = placementColor;
                 currentState = playerState.PLACING;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
             placementUI.enabled = false;
-            radiusUI.enabled = false;
+            radiusUI3.enabled = false;
+            radiusUI1.enabled = false;
+            radiusUI2.enabled = false;
             currentState = playerState.SHOOTING;
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            placementUI.enabled = false;
-            radiusUI.enabled = false;
-            currentState = playerState.PAUSED;
+            if (currentState == playerState.PAUSED)
+            {
+                currentState = playerState.SHOOTING;
+            }
+            else
+            {
+                currentState = playerState.PAUSED;
+            }
         }
         if (currentState == playerState.PAUSED)
         {
@@ -177,6 +191,8 @@ public class PlayerController : MonoBehaviour
         distance = Mathf.Min(distance, placementRadius);
         var placePosition = transform.position + placeDir * distance;
         placementUI.transform.position = placePosition;
+
+
         if (Input.GetMouseButtonDown(0))
         {
             GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
@@ -199,7 +215,9 @@ public class PlayerController : MonoBehaviour
                     // StartCoroutine(GameObject.FindObjectOfType<GameManager>().UpdateFillPercent());
                     currentState = playerState.SHOOTING;
                     placementUI.enabled = false;
-                    radiusUI.enabled = false;
+                    radiusUI1.enabled = false;
+                    radiusUI2.enabled = false;
+                    radiusUI3.enabled = false;
                     GetComponent<PlayerStats>().ChangeGold(-tower.GetComponent<TowerScript>().GetCost());
                 }
             }
