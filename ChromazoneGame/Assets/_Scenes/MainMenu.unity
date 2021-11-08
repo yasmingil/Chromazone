@@ -1790,7 +1790,10 @@ MonoBehaviour:
     Stay Alive
 
     Restore
-    Color to the World'
+    Color to the World
+
+
+    (After Reset, pause and unpause and press [1] twice)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 455c4865945b17841b3b626d42280a14, type: 2}
   m_sharedMaterial: {fileID: -7503230643081147581, guid: 455c4865945b17841b3b626d42280a14, type: 2}
@@ -1817,8 +1820,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
