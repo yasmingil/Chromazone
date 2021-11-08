@@ -14,6 +14,7 @@ TagManager:
   - healthItem
   - PlayerBullet
   - tower
+  - Point
   layers:
   - Default
   - TransparentFX

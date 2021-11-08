@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
         CheckSpawning();
         CheckWaveChange();
+        CheckWin();
     }
 
     private void CheckSpawning()
@@ -115,10 +116,29 @@ public class GameManager : MonoBehaviour
             Destroy(enemy.gameObject);
         }
         loseGameUI.SetActive(true);
+
+        GameObject.FindObjectOfType<AudioManager>().PlayerDie();
     }
 
     public void ResetGame()
     {
         SceneManager.LoadScene("MasterScene");
+    }
+
+    public void CheckWin()
+    {
+        int i = 0;
+        foreach(GameObject p in GameObject.FindGameObjectsWithTag("Point"))
+        {
+            foreach(GameObject t in GameObject.FindGameObjectsWithTag("Tower"))
+            {
+
+                if(Vector3.Distance(p.transform.position, t.transform.position) <= 4)
+                {
+                    i++;
+                    continue;
+                }
+            }
+        }
     }
 }
