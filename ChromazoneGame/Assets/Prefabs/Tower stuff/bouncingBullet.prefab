@@ -216,12 +216,36 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: towertype
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: bulletSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: bulletCooldown
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662410468091831868, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Size.x
+      value: 0.709167
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662410468091831868, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Size.y
+      value: 0.669333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662410468091831868, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662410468091831868, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.021170378
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662410468091831868, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.019916534
       objectReference: {fileID: 0}
     - target: {fileID: 2061702032475927508, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: m_Layer

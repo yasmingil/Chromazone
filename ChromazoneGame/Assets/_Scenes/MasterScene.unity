@@ -2641,6 +2641,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 110801488, guid: d89ee3d5482a53442afde8397679f3ad, type: 3}
+      propertyPath: tower1
+      value: 
+      objectReference: {fileID: 3420349362270144183, guid: dac26710c190ff143915e9de1876ae2c, type: 3}
+    - target: {fileID: 110801488, guid: d89ee3d5482a53442afde8397679f3ad, type: 3}
       propertyPath: bulletSpeed
       value: 20
       objectReference: {fileID: 0}
