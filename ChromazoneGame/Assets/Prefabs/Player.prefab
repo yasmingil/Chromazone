@@ -444,11 +444,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b8463e4455a2b449bfe988bf11a3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldValue: 0
+  healthValue: 0
   bullet: {fileID: 8974339296131578729, guid: 93f401a6e291845c28809377f47d5b8d, type: 3}
   bulletCooldown: 0.2
   bulletSpeed: 10
   bulletDamage: 50
-  tower1: {fileID: 3202457936781034632, guid: aada795fefa06754f90dbbcbda156f0e, type: 3}
+  tower1: {fileID: 3420349362270144183, guid: dac26710c190ff143915e9de1876ae2c, type: 3}
   tower2: {fileID: 6246401094252228920, guid: 89929c6a4c359d64b874f681874f36b3, type: 3}
   tower3: {fileID: 4812470962616502176, guid: 0886b41d42ae457498cdecae9a6e9a89, type: 3}
   placementRadius: 3

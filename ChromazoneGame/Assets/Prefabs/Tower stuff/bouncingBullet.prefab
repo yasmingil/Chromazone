@@ -228,6 +228,18 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: towerColor.b
+      value: 0.9960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: towerColor.g
+      value: 0.42352945
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
+      propertyPath: towerColor.r
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178329571304912532, guid: f713a1aa5c7f2b543b2f222c26458599, type: 3}
       propertyPath: bulletCooldown
       value: 1
       objectReference: {fileID: 0}
