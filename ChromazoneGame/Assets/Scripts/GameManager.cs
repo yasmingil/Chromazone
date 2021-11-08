@@ -115,10 +115,22 @@ public class GameManager : MonoBehaviour
             Destroy(enemy.gameObject);
         }
         loseGameUI.SetActive(true);
+
+        GameObject.FindObjectOfType<AudioManager>().PlayerDie();
     }
 
     public void ResetGame()
     {
-        SceneManager.LoadScene("MasterScene");
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void CheckWin()
+    {
+        int i = 0;
+        foreach(GameObject p in GameObject.FindGameObjectsWithTag("Point"))
+        {
+            Debug.Log(i);
+            i++;
+        }
     }
 }
