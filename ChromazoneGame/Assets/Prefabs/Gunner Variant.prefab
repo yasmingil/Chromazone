@@ -25,7 +25,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: goldDropRate
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5389809497199522896, guid: 67f8603b9441d7c439f443b3090c1405, type: 3}
       propertyPath: goldDropValue
