@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         radiusUI.enabled = false;
         placementUI.enabled = false;
+        currentState = playerState.SHOOTING;
     }
 
     private void Update()
