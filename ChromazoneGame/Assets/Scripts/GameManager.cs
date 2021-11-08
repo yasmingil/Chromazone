@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playArea;
     [SerializeField] private LayerMask turretRangeLayerMask;
     [SerializeField] private TMP_Text waveDisplay;
+    [SerializeField] private GameObject loseGameUI;
 
     [SerializeField] private List<Wave> waves;
 
@@ -107,6 +109,11 @@ public class GameManager : MonoBehaviour
     }
     public void LoseGame()
     {
+        loseGameUI.SetActive(true);
+    }
 
+    public void ResetGame()
+    {
+        SceneManager.LoadScene("MasterScene");
     }
 }
